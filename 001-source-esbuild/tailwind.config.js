@@ -86,7 +86,8 @@ module.exports = {
 			},
 		},
 		fontFamily: {
-			primary: ["Gilroy", "sans-serif"],
+			primary: ["IBM Plex Sans", "sans-serif"],
+			goldman: ["Goldman", "sans-serif"],
 			awesome: ['"Font Awesome 6 Pro"'],
 			awesomeSharp: ['"Font Awesome 6 Sharp"'],
 		},
@@ -233,24 +234,24 @@ module.exports = {
 			colors: {
 				transparent: "transparent",
 				"primary": {
-					"1": "#12545e",
-					"2": "#e45c1e",
-					"3": "#232321"
+					"1": "#fbd844",
+					"2": "#ef212d",
 				},
 				"neutral": {
 					"50": "#f6f6f6",
 					"100": "#efefef",
-					"200": "#dcdcdc",
-					"300": "#bdbdbd",
-					"400": "#989898",
-					"500": "#818181",
-					"600": "#656565",
-					"700": "#525252",
-					"800": "#464646",
-					"900": "#3d3d3d",
-					"950": "#292929",
+					"200": "#e9e9e9",
+					"300": "#d4d3d3",
+					"400": "#bdbcbc",
+					"500": "#a8a6a7",
+					"600": "#918f90",
+					"700": "#7b7979",
+					"800": "#666364",
+					"900": "#4f4c4d",
+					"950": "#3a3637",
 					"White": "#ffffff",
-					"Black": "#000000"
+					"Black": "#242021",
+					"000000": "#000000"
 				},
 				optional: {
 					1: "#150f96",
@@ -494,25 +495,57 @@ module.exports = {
 			addBase({});
 			addComponents({
 				'.title-64': {
-					'@apply text-4xl md:text-5xl lg:text-6xl xl:text-64 font-bold': "",
+					fontWeight: '700',
+					fontSize: 'calc(36/1920*100rem)', // 4xl
+					[`@media (min-width: ${theme('screens.md')})`]: {
+						fontSize: 'calc(40/1920*100rem)', // 5xl
+					},
+					[`@media (min-width: ${theme('screens.lg')})`]: {
+						fontSize: 'calc(48/1920*100rem)', // 6xl
+					},
+					[`@media (min-width: ${theme('screens.xl')})`]: {
+						fontSize: 'calc(64/1920*100rem)', // 64
+					},
 				},
 				'.title-48': {
-					'@apply text-4xl md:text-4xl xl:text-6xl font-semibold leading-[1.18]': "",
+					fontWeight: '600',
+					lineHeight: '1.18',
+					fontSize: 'calc(36/1920*100rem)', // 4xl
+					[`@media (min-width: ${theme('screens.md')})`]: {
+						fontSize: 'calc(36/1920*100rem)', // still 4xl
+					},
+					[`@media (min-width: ${theme('screens.xl')})`]: {
+						fontSize: 'calc(48/1920*100rem)', // 6xl
+					},
 				},
 				'.title-40': {
-					'@apply text-4xl lg:text-5xl font-bold': "",
+					fontWeight: '700',
+					fontSize: 'calc(36/1920*100rem)', // 4xl
+					[`@media (min-width: ${theme('screens.lg')})`]: {
+						fontSize: 'calc(40/1920*100rem)', // 5xl
+					},
 				},
 				'.title-32': {
-					'@apply text-[22px] leading-[1.1]': "",
+					fontSize: '22px',
+					lineHeight: '1.1',
 				},
 				'.title-28': {
-					'@apply text-[20px] lg:rem:text-[28px]': "",
+					fontSize: '20px',
+					[`@media (min-width: ${theme('screens.lg')})`]: {
+						fontSize: `${28 / 19.2}rem`, // rem:text-[28px]
+					},
 				},
 				'.title-24': {
-					'@apply text-[18px] lg:text-2xl': "",
+					fontSize: '18px',
+					[`@media (min-width: ${theme('screens.lg')})`]: {
+						fontSize: 'clamp(18px,calc(24/1920*100rem),calc(24/1920*100rem))', // 2xl
+					},
 				},
 				'.title-20': {
-					'@apply text-[16px] lg:text-xl': "",
+					fontSize: '16px',
+					[`@media (min-width: ${theme('screens.lg')})`]: {
+						fontSize: 'calc(20/1920*100rem)', // xl
+					},
 				},
 				'.body-14': {
 					'font-size': 'calc(14/1920*100rem)',
@@ -707,6 +740,12 @@ module.exports = {
 								const value = `clamp(${num1}px, ${valRem}rem, ${maxRem}rem)`;
 								decl.value = value;
 							}
+						} else {
+							const valRem = 40 / rootFontSize;
+							const maxRem = valRem;
+							const num1 = parseInt(ratioValues[0]);
+							const value = `clamp(${num1}px, ${valRem}rem, ${maxRem}rem)`;
+							decl.value = value;
 						}
 					});
 				});
@@ -729,6 +768,32 @@ module.exports = {
 					});
 				});
 			});
+		}),
+		plugin(function ({ addUtilities, theme }) {
+			const breakpoints = ['sm', 'md', 'lg', 'xl'];
+			const columns = 12;
+
+			// Generate column utilities for autocomplete
+			const columnUtilities = {};
+
+			// Base columns (col-1 through col-12)
+			for (let i = 1; i <= columns; i++) {
+				columnUtilities[`.col-${i}`] = {};
+			}
+
+			// Responsive columns
+			breakpoints.forEach(bp => {
+				for (let i = 1; i <= columns; i++) {
+					columnUtilities[`.col-${bp}-${i}`] = {};
+				}
+				columnUtilities[`.col-${bp}-auto`] = {};
+			});
+
+			// Add row and helper classes
+			columnUtilities['.row'] = {};
+			columnUtilities['.col-auto'] = {};
+
+			addUtilities(columnUtilities);
 		}),
 	],
 };
