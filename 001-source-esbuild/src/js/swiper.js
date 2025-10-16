@@ -63,7 +63,6 @@ export function swiperInit () {
 		slidesPerView: 1,
 		spaceBetween: 0,
 		speed: 1000,
-		loop: true,
 		effect: "fade",
 		autoplay: {
 			delay: 3500,

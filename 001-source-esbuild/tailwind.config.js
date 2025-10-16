@@ -494,25 +494,25 @@ module.exports = {
 			addBase({});
 			addComponents({
 				'.title-64': {
-					'@apply': 'text-4xl md:text-5xl lg:text-6xl xl:text-64 font-bold'
+					'@apply text-4xl md:text-5xl lg:text-6xl xl:text-64 font-bold': "",
 				},
 				'.title-48': {
-					'@apply': 'text-4xl md:text-4xl xl:text-6xl font-semibold leading-[1.18]'
+					'@apply text-4xl md:text-4xl xl:text-6xl font-semibold leading-[1.18]': "",
 				},
 				'.title-40': {
-					'@apply': 'text-4xl lg:text-5xl font-bold'
+					'@apply text-4xl lg:text-5xl font-bold': "",
 				},
 				'.title-32': {
-					'@apply': 'text-[22px] lg:text-32 leading-[1.1]'
+					'@apply text-[22px] leading-[1.1]': "",
 				},
 				'.title-28': {
-					'@apply': 'text-[20px] lg:text-28'
+					'@apply text-[20px] lg:rem:text-[28px]': "",
 				},
 				'.title-24': {
-					'@apply': 'text-[18px] lg:text-2xl'
+					'@apply text-[18px] lg:text-2xl': "",
 				},
 				'.title-20': {
-					'@apply': 'text-[16px] lg:text-xl'
+					'@apply text-[16px] lg:text-xl': "",
 				},
 				'.body-14': {
 					'font-size': 'calc(14/1920*100rem)',
