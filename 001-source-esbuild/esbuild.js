@@ -19,7 +19,7 @@ const Table = require('cli-table3');
 const ora = require('ora');
 
 // Helper function to ensure stdin stays in raw mode
-function ensureRawStdin() {
+function ensureRawStdin () {
 	const stdin = process.stdin;
 	if (!stdin) return;
 	if (stdin.isTTY) {
@@ -29,7 +29,7 @@ function ensureRawStdin() {
 }
 
 // Helper function to create spinners with quiet mode support
-function createSpinner(text) {
+function createSpinner (text) {
 	const quietMode = process.argv.includes('--quiet') || process.env.NODE_ENV === 'production';
 
 	const spinner = ora({
@@ -46,7 +46,7 @@ function createSpinner(text) {
 	const originalStop = spinner.stop.bind(spinner);
 	const originalStopAndPersist = spinner.stopAndPersist ? spinner.stopAndPersist.bind(spinner) : null;
 
-	spinner.succeed = function(message) {
+	spinner.succeed = function (message) {
 		if (quietMode) {
 			// In quiet mode, don't show success messages (matching original behavior)
 			this.stop();
@@ -57,21 +57,21 @@ function createSpinner(text) {
 		return res;
 	};
 
-	spinner.fail = function(message) {
+	spinner.fail = function (message) {
 		// Always show fail messages (matching original behavior)
 		const res = originalFail(message);
 		ensureRawStdin(); // Restore stdin state after spinner stops
 		return res;
 	};
 
-	spinner.stop = function(...args) {
+	spinner.stop = function (...args) {
 		const res = originalStop(...args);
 		ensureRawStdin(); // Restore stdin state after spinner stops
 		return res;
 	};
 
 	if (originalStopAndPersist) {
-		spinner.stopAndPersist = function(...args) {
+		spinner.stopAndPersist = function (...args) {
 			const res = originalStopAndPersist(...args);
 			ensureRawStdin(); // Restore stdin state after spinner stops
 			return res;
@@ -856,8 +856,8 @@ const buildSASS = trackTask('SASS', async function buildSASS () {
 		// Create SASS entry file that matches gulp sass task file pattern
 		const sassFiles = [
 			'src/components/_core/_**.sass',
-			'src/components/_tailwind/*.sass',
 			'src/components/_core/**.sass',
+			'src/components/_tailwind/*.sass',
 			'src/components/_global/**.sass',
 			'src/components/**/**.sass'
 		];

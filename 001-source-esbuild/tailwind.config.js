@@ -703,6 +703,9 @@ module.exports = {
 				".vertical-lr": {
 					writingMode: "vertical-lr",
 				},
+				".text-last-center": {
+					"text-align-last": "center",
+				},
 			};
 			addUtilities(newUtilities);
 			addVariant("optional", "&:optional");
