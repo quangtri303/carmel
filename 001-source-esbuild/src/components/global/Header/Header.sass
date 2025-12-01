@@ -1,6 +1,6 @@
 header
-	@apply fixed top-0 left-0 bg-primary-3 w-screen
-	@apply text-white z-10 
+	@apply fixed top-0 left-0 w-screen
+	@apply text-white z-10
 	.header-language
 		.header-language-active
 			@apply flex items-center
@@ -8,13 +8,4 @@ header
 				@apply hidden
 		.header-language-list
 			li.wpml-ls-current-language
-				@apply hidden  
-	.list-menu-header
-		&>ul
-			&>li
-				&:first-child
-					a
-						@apply text-0
-						&::before
-							content: "\f015"
-							@apply font-awesome
+				@apply hidden

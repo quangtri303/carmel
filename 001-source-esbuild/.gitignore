@@ -1,4 +1,2 @@
-/dist 
-/node_modules
-/prompts
-/docs
+node_modules
+dist

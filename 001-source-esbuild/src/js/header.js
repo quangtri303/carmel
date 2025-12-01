@@ -1,5 +1,4 @@
 import { headerSearch } from "../../plugins/ComponentsUi/HeaderSearch/HeaderSearch";
-import { detectCloseElement } from "./helper";
 /*==================== Header ====================*/
 /**
  * @param header

@@ -21,7 +21,7 @@
 		height: 0
 		overflow: hidden
 		padding-top: 100%
-		img,iframe
+		img,iframe,svg
 			@apply absolute top-0 left-0 w-full h-full object-cover transition-all duration-300
 	.img-ratio-center
 		position: relative
@@ -31,6 +31,8 @@
 		@apply flex-center
 		img,iframe
 			@apply absolute top-1/2 left-1/2 w-auto h-auto object-contain transition-all duration-300 max-w-full max-h-full -translate-x-1/2 -translate-y-1/2
+	.container-fluid
+		@apply xl:px-20 md:px-10 px-[15px]
 	.div-ratio
 		position: relative
 		display: block
@@ -41,10 +43,6 @@
 			@apply absolute top-0 left-0 w-full h-full transition-all duration-300
 	body
 		@apply text-[#333333] text-base font-primary
-	.row
-		@apply flex flex-wrap -mx-[7.5px] xl:-mx-5 gap-y-5
-	.col
-		@apply px-[7.5px] xl:px-5 w-full
 	h1
 		@apply text-3xl font-bold
 

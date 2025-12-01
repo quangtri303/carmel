@@ -4,15 +4,15 @@ $grid-breakpoints: (sm: theme('screens.sm'), md: theme('screens.md'), lg: theme(
 .row
 	display: flex
 	flex-wrap: wrap
-	margin-left: -8px
-	margin-right: -8px
+	margin-left: -7.5px
+	margin-right: -7.5px
 	@apply gap-y-4 xl:gap-y-10
 	@screen xl
 		margin-left: clamp(-20px,calc(-20/1920*100rem),calc(-20/1920*100rem))
 		margin-right: clamp(-20px,calc(-20/1920*100rem),calc(-20/1920*100rem))
 		&.low-spacing
-			margin-left: clamp(-8px,calc(-8/1920*100rem),calc(-8/1920*100rem))
-			margin-right: clamp(-8px,calc(-8/1920*100rem),calc(-8/1920*100rem))
+			margin-left: clamp(-7.5px,calc(-8/1920*100rem),calc(-8/1920*100rem))
+			margin-right: clamp(-7.5px,calc(-8/1920*100rem),calc(-8/1920*100rem))
 			> [class*="col-"]
 				@screen xl
 					padding-right: clamp(8px,calc(8/1920*100rem),calc(8/1920*100rem))
@@ -38,8 +38,8 @@ $grid-breakpoints: (sm: theme('screens.sm'), md: theme('screens.md'), lg: theme(
 		padding-right: 8px
 		padding-left: 8px
 		@screen xl
-			padding-right: clamp(20px,calc(20/1920*100rem),calc(20/1920*100rem))
-			padding-left: clamp(20px,calc(20/1920*100rem),calc(20/1920*100rem))
+			padding-right: clamp(15px,calc(20/1920*100rem),calc(20/1920*100rem))
+			padding-left: clamp(15px,calc(20/1920*100rem),calc(20/1920*100rem))
 
 	.col
 		-ms-flex-preferred-size: 0

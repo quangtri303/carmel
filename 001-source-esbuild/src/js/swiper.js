@@ -1,5 +1,5 @@
 import Swiper from "swiper";
-import { Autoplay, Grid, Mousewheel, Navigation, Pagination } from "swiper/modules";
+import { Autoplay, EffectFade, Grid, Mousewheel, Navigation, Pagination } from "swiper/modules";
 
 /**
  * @param swiperInit
@@ -63,6 +63,7 @@ export function swiperInit () {
 		slidesPerView: 1,
 		spaceBetween: 0,
 		speed: 1000,
+		loop: true,
 		effect: "fade",
 		autoplay: {
 			delay: 3500,

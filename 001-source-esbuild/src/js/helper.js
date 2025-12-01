@@ -8,18 +8,20 @@ export function setBackgroundElement () {
 		});
 	});
 }
-export function detectCloseElement (ele, ele2, funcRemove) {
-	// close
+export function detectCloseElement ({
+	box,
+	button,
+	funcClose,
+}) {
 	$(document).on("click", function (e) {
-		console.log();
-		if (!$(e.target).closest(ele).length && !$(e.target).hasClass(ele2)) {
-			funcRemove();
+		if (!$(e.target).closest(box).length && (!$(e.target).is(button) && !$(e.target).closest(button).length)) {
+			funcClose();
 		}
 	});
 	// esc
 	$(document).keyup(function (e) {
 		if (e.key === "Escape") {
-			funcRemove();
+			funcClose();
 		}
 	});
 	// overlay-blur
