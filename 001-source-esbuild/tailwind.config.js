@@ -556,6 +556,69 @@ module.exports = {
 				'.body-18': {
 					'font-size': 'calc(18/1920*100rem)',
 				},
+				'.heading-1': {
+					fontSize: '40px', // 4xl
+					[`@media (min-width: ${theme('screens.lg')})`]: {
+						fontSize: 'calc(42/1920*100rem)', // 6xl
+					},
+					[`@media (min-width: ${theme('screens.xl')})`]: {
+						fontSize: 'calc(48/1920*100rem)', // 72
+					},
+				},
+				'.heading-2': {
+					fontSize: '32px', // 4xl
+					[`@media (min-width: ${theme('screens.lg')})`]: {
+						fontSize: 'calc(32/1920*100rem)', // 6xl
+					},
+					[`@media (min-width: ${theme('screens.xl')})`]: {
+						fontSize: 'calc(36/1920*100rem)', // 72
+					},
+				},
+				'.heading-3': {
+					fontSize: '20px', // 4xl
+					[`@media (min-width: ${theme('screens.lg')})`]: {
+						fontSize: 'calc(24/1920*100rem)', // 6xl
+					},
+					[`@media (min-width: ${theme('screens.xl')})`]: {
+						fontSize: 'calc(24/1920*100rem)', // 72
+					},
+				},
+				'.heading-4': {
+					fontSize: '18px',
+					[`@media (min-width: ${theme('screens.lg')})`]: {
+						fontSize: 'calc(20/1920*100rem)', // 6xl
+					},
+				},
+				'.body-1': {
+					fontSize: '18px',
+					[`@media (min-width: ${theme('screens.lg')})`]: {
+						fontSize: 'clamp(18px,calc(20/1920*100rem),calc(20/1920*100rem))', // 6xl
+					},
+				},
+				'.body-2': {
+					fontSize: '16px',
+					[`@media (min-width: ${theme('screens.lg')})`]: {
+						fontSize: 'clamp(16px,calc(18/1920*100rem),calc(18/1920*100rem))', // 6xl
+					},
+				},
+				'.body-3': {
+					fontSize: '14px',
+					[`@media (min-width: ${theme('screens.lg')})`]: {
+						fontSize: 'clamp(14px,calc(16/1920*100rem),calc(16/1920*100rem))', // 6xl
+					},
+				},
+				'.body-4': {
+					fontSize: '14px',
+					[`@media (min-width: ${theme('screens.lg')})`]: {
+						fontSize: 'clamp(12px,calc(14/1920*100rem),calc(14/1920*100rem))', // 6xl
+					},
+				},
+				'.body-5': {
+					fontSize: '12px',
+					[`@media (min-width: ${theme('screens.lg')})`]: {
+						fontSize: 'clamp(12px,calc(12px/1920*100rem),calc(12px/1920*100rem))', // 6xl
+					},
+				},
 				".absolute-center-y": {
 					position: "absolute",
 					top: "50%",

@@ -1,0 +1,442 @@
+<!--  <div class="sitemap Sitemap-TreeView" id="sitemapContainer"> 
+<div id="home">
+<a href="<?php echo home_url(); ?>"><?php echo bloginfo('name'); ?></a>
+</div> -->
+<!-- Output ul -->
+<!-- </div> -->
+<script>
+	// JS to add functionality to the tree view
+	document.addEventListener("DOMContentLoaded", function () {
+		const treeContainer = document.getElementById("sitemapContainer");
+		// Find all list items that have a nested list
+		const parentItems = treeContainer.querySelectorAll("li");
+
+		parentItems.forEach((item) => {
+			const subMenu = item.querySelector("ul");
+			if (subMenu) {
+				// Create the toggle button
+				const toggleBtn = document.createElement("span");
+				toggleBtn.className = "Sitemap-TreeView-Collapse"; // Default to collapsed/collapsible style
+
+				// Add click event
+				toggleBtn.onclick = function (e) {
+					e.stopPropagation(); // Prevent triggering link click if any
+
+					// Toggle the button class
+					if (this.classList.contains("Sitemap-TreeView-Collapse")) {
+						this.classList.remove("Sitemap-TreeView-Collapse");
+						this.classList.add("Sitemap-TreeView-Expand");
+
+						// Hide the submenu
+						subMenu.classList.add("Sitemap-TreeView-Hide");
+						subMenu.classList.remove("Sitemap-TreeView-Show");
+					} else {
+						this.classList.remove("Sitemap-TreeView-Expand");
+						this.classList.add("Sitemap-TreeView-Collapse");
+
+						// Show the submenu
+						subMenu.classList.remove("Sitemap-TreeView-Hide");
+						subMenu.classList.add("Sitemap-TreeView-Show");
+					}
+				};
+
+				// Add the button to the list item
+				item.appendChild(toggleBtn);
+
+				// Mark as parent for specific styling if needed
+				item.classList.add("Sitemap-TreeView-Parent");
+			}
+		});
+
+		// Add root class for responsive styling
+		const rootUl = treeContainer.querySelector(":scope > ul");
+		if (rootUl) {
+			const rootLis = rootUl.querySelectorAll(":scope > li");
+			rootLis.forEach((li) => li.classList.add("Sitemap-TreeView-Root"));
+		}
+	});
+</script>
+<style>
+	.Sitemap-TreeView {
+		--color-primary: #0e9017;
+	}
+	/* --- USER PROVIDED CSS START --- */
+	.Sitemap-TreeView #home {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.Sitemap-TreeView #home a {
+		margin: 0;
+		display: block;
+		line-height: 22px;
+		padding: 15px 30px;
+		font-size: 0.9375em;
+		font-weight: bold;
+		color: white;
+		background: var(--color-primary);
+		text-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		border: 1px solid rgba(0, 0, 0, 0.025);
+		box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.15);
+		text-decoration: none;
+		border-radius: 4px;
+		transition: all 0.2s ease;
+	}
+
+	.Sitemap-TreeView ul {
+		display: flex;
+		flex-wrap: wrap;
+		list-style: none;
+		position: relative;
+		padding-left: 0;
+		margin: 0;
+	}
+
+	.Sitemap-TreeView li {
+		flex: 1;
+		flex-basis: 11.5em;
+		padding-right: 1.25em;
+		position: relative;
+		box-sizing: border-box;
+	}
+
+	.Sitemap-TreeView > ul > li {
+		margin-top: 3em;
+	}
+
+	.Sitemap-TreeView > ul > li .Sitemap-TreeView-Collapse,
+	.Sitemap-TreeView > ul > li .Sitemap-TreeView-Expand {
+		right: 30px !important;
+	}
+
+	.Sitemap-TreeView > ul > li > ul > li .Sitemap-TreeView-Collapse,
+	.Sitemap-TreeView > ul > li > ul > li .Sitemap-TreeView-Expand {
+		right: 5px !important;
+	}
+
+	.Sitemap-TreeView li a {
+		margin: 0;
+		display: block;
+		line-height: 22px;
+		padding: 15px;
+		padding-right: 30px;
+		font-size: 0.9375em;
+		font-weight: bold;
+		color: white;
+		background: var(--color-primary);
+		text-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		border: 1px solid rgba(0, 0, 0, 0.025);
+		box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.15);
+		text-decoration: none;
+		border-radius: 4px;
+		transition: all 0.2s ease;
+	}
+
+	.Sitemap-TreeView li a:hover {
+		transform: translateY(-2px);
+		box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.2);
+	}
+
+	/* -------- Second Level --------- */
+
+	.Sitemap-TreeView ul ul {
+		display: block;
+	}
+
+	.Sitemap-TreeView ul ul li {
+		margin-top: 0.6875em;
+		padding-right: 0;
+	}
+
+	.Sitemap-TreeView ul ul li a {
+		color: #fff;
+		background-image: linear-gradient(-145deg, #0082c4, #0082c4 1%, #0082c4);
+	}
+
+	.Sitemap-TreeView ul ul li:first-child {
+		padding-top: 0em !important;
+		margin-top: 15px;
+	}
+
+	/* -------- Third Level --------- */
+
+	.Sitemap-TreeView ul ul ul {
+		margin-top: 0;
+		padding-bottom: 0;
+		/* display: none; */
+		padding-left: 0;
+	}
+
+	.Sitemap-TreeView ul ul ul li {
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+
+	.Sitemap-TreeView ul ul ul li a {
+		background-color: #fd0;
+		/* Fallback */
+		background-image: none;
+		background-color: #f0b90b;
+		color: #333;
+		text-shadow: none;
+		font-size: 0.85em;
+		padding: 0.75em;
+		width: 90%;
+		margin-right: 0;
+		margin-left: auto;
+	}
+
+	.Sitemap-TreeView ul ul ul li a:hover {
+		background-color: #d4a30a;
+	}
+
+	.Sitemap-TreeView ul ul ul li:first-child {
+		padding-top: 1em;
+	}
+
+	.Sitemap-TreeView ul ul ul li a:link:after,
+	.Sitemap-TreeView ul ul ul li a:visited:after {
+		font-size: 0.75em;
+	}
+
+	/* -------- Fourth Level --------- */
+
+	.Sitemap-TreeView ul ul ul ul {
+		margin-top: 0;
+		padding-top: 0.3125em;
+		padding-bottom: 0.3125em;
+		/* Controlled by JS via classes now, default visible here for structure */
+	}
+
+	.Sitemap-TreeView ul ul ul ul li a {
+		background-color: #de003a;
+		color: white;
+		padding: 0.75em;
+		width: 80%;
+	}
+
+	.Sitemap-TreeView ul ul ul ul li a:hover {
+		background-color: #c20035;
+	}
+
+	/* -------- Collapse/Expand Buttons --------- */
+
+	.Sitemap-TreeView-Collapse,
+	.Sitemap-TreeView-Expand {
+		position: absolute;
+		top: 0px;
+		right: 20px !important;
+		/* Adjusted slightly */
+		background-color: rgba(0, 0, 0, 0.1) !important;
+		width: 30px !important;
+		height: 30px !important;
+		z-index: 2;
+		padding: 0 !important;
+		border: 0 !important;
+		box-shadow: none !important;
+		outline: none !important;
+		display: flex !important;
+		justify-content: center;
+		align-items: center;
+		font-size: 0 !important;
+		background-image: none !important;
+		cursor: pointer;
+		border-radius: 50%;
+		margin-top: 11px;
+		/* Align with link vertical center approx */
+	}
+
+	.Sitemap-TreeView-Collapse:hover,
+	.Sitemap-TreeView-Expand:hover {
+		background-color: rgba(0, 0, 0, 0.3) !important;
+	}
+
+	.Sitemap-TreeView-Collapse:before {
+		width: 30px;
+		height: 30px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-family: "Font Awesome\ 6 Pro";
+		font-size: 14px !important;
+		font-weight: 900 !important;
+		color: #fff !important;
+		content: "\f068";
+	}
+
+	.Sitemap-TreeView-Expand:before {
+		width: 30px;
+		height: 30px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-family: "Font Awesome\ 6 Pro";
+		font-size: 18px !important;
+		font-weight: 900 !important;
+		color: #fff !important;
+		content: "\2b";
+	}
+
+	.Sitemap-TreeView-Parent .Sitemap-TreeView-Expand,
+	.Sitemap-TreeView-Parent .Sitemap-TreeView-Collapse {
+		right: 0.75rem !important;
+	}
+
+	.Sitemap-TreeView-Show {
+		display: block !important;
+		animation: fadeIn 0.3s ease-in-out;
+	}
+
+	.Sitemap-TreeView-Hide {
+		display: none !important;
+	}
+
+	@keyframes fadeIn {
+		from {
+			opacity: 0;
+			transform: translateY(-10px);
+		}
+
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	/* -------- Connector Lines --------- */
+
+	.Sitemap-TreeView ul:before,
+	.Sitemap-TreeView ul:after,
+	.Sitemap-TreeView ul li:before,
+	.Sitemap-TreeView ul li:after {
+		display: block;
+		content: "";
+		position: absolute;
+		border-width: 0;
+		border-color: #ccc;
+		/* Lighter color for better visibility */
+		border-style: solid;
+		z-index: -1;
+		pointer-events: none;
+	}
+
+	.Sitemap-TreeView > ul > li:before {
+		height: 1.375em;
+		top: -1.375em;
+		right: calc(50% + 0.625em);
+		width: calc(100% - 2px);
+		border-top-width: 2px;
+		border-right-width: 2px;
+	}
+
+	.Sitemap-TreeView ul ul li:after {
+		width: 50%;
+		height: 0.6875em;
+		top: 0;
+		right: 1px;
+		border-left-width: 2px;
+	}
+
+	.Sitemap-TreeView ul ul li:first-child:before {
+		width: 50%;
+		height: 1.3125em;
+		top: 0.6875em;
+		right: 1px;
+		border-left-width: 2px;
+	}
+
+	.Sitemap-TreeView > ul > li:last-child:after {
+		border-bottom-width: 0;
+	}
+
+	.Sitemap-TreeView ul ul ul li .Sitemap-TreeView-Collapse,
+	.Sitemap-TreeView ul ul ul li .Sitemap-TreeView-Expand {
+		right: 5px !important;
+		top: -4px !important;
+	}
+
+	.Sitemap-TreeView ul ul ul li:before {
+		width: calc(50% - 5px) !important;
+		/* height: calc(100% + 13px);
+ 	top: -69%; */
+		height: 2.8em;
+		top: -19px;
+		left: 0;
+		border-left-width: 2px;
+		border-bottom-width: 2px;
+	}
+
+	.Sitemap-TreeView ul ul ul li:first-child:before {
+		height: 2.8em;
+		top: -19px;
+		border-top-width: 0px;
+	}
+
+	.Sitemap-TreeView ul ul ul:before {
+		/* width: 50%;
+ 	height: 1.25em;
+ 	top: 3px;
+ 	right: 82px;
+ 	border-left-width: 2px; */
+		width: 1px;
+		height: calc(100%);
+		top: -2.5em;
+		left: 0;
+		border-left-width: 2px;
+	}
+
+	.Sitemap-TreeView ul ul ul li:after {
+		border-width: 0;
+	}
+
+	.Sitemap-TreeView ul ul ul ul:before {
+		width: 1px;
+		height: calc(100% + 2.5em);
+		top: -2.5em;
+		left: 0;
+		border-left-width: 2px;
+	}
+
+	.Sitemap-TreeView-Root:first-child:before {
+		left: calc(40% + 0.625em);
+		right: auto;
+		transform: rotateY(180deg);
+	}
+
+	/* -------- Responsive Columns --------- */
+
+	@media screen and (max-width: 30em) {
+		.Sitemap-TreeView-Root:first-child:before {
+			left: auto;
+			right: calc(50% + 0.625em);
+			transform: none;
+		}
+
+		.Sitemap-TreeView ul {
+			display: block;
+		}
+
+		.Sitemap-TreeView li {
+			width: 100%;
+			padding-right: 0;
+		}
+	}
+
+	@media screen and (min-width: 30em) {
+		.Sitemap-TreeView > ul > li {
+			max-width: 50%;
+		}
+	}
+
+	@media screen and (min-width: 38.5em) {
+		.Sitemap-TreeView > ul > li {
+			max-width: 33%;
+		}
+	}
+
+	@media screen and (min-width: 50em) {
+		.Sitemap-TreeView > ul > li {
+			max-width: 25%;
+		}
+	}
+</style>
