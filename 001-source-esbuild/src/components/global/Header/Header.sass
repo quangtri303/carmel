@@ -9,3 +9,49 @@ header
 		.header-language-list
 			li.wpml-ls-current-language
 				@apply hidden
+
+.header-nav
+	@apply heading-5 font-bold text-Primary/1 flex items-center gap-5 px-1 list-none m-0
+
+	li
+		@apply relative text-Primary/1 flex items-center gap-1
+
+		> a
+			@apply block px-1 py-3 hover:text-Primary/2 transition-colors duration-300 ease-out
+
+		ul
+			@apply absolute top-full left-0 opacity-0 invisible bg-Primary/1 px-7 py-3 rounded-tr-10 rounded-br-10 rounded-bl-10 w-fit whitespace-nowrap
+
+			li
+				@apply relative hover:text-Primary/2 transition-colors duration-300 ease-out w-full text-Utility/white heading-5 font-bold
+
+				a
+					@apply block px-4 py-3 
+.header-search
+	@apply flex bg-Primary/1 h-8 rounded-20 px-3 gap-2 items-center w-[calc(114/1920*100rem)]
+
+	input
+		@apply rem:text-[14px] text-Utility/white bg-transparent border-none focus:outline-none w-full
+
+		&::placeholder
+			@apply text-Utility/white
+
+.header-mobile-nav
+	@apply fixed left-0 top-27.5 w-full bg-Primary/1 list-none m-0 p-0 overflow-y-auto opacity-0 invisible transition-opacity duration-300 ease-out z-9
+
+	&.active
+		@apply opacity-100 visible
+	> li
+		@apply border-b border-Primary/2 text-Utility/white heading-6 font-bold
+		a
+			@apply flex items-center w-full px-4 py-3 hover:bg-Primary/2 transition-colors duration-300
+		ul
+			@apply hidden list-none m-0 p-0 border-t border-Primary/2
+			li
+				a
+					@apply block px-6 py-3 hover:bg-Primary/2 transition-colors duration-300 text-Utility/white heading-6 font-bold
+
+
+.header-mobile-toggle
+	@apply text-left text-Utility/white heading-6 font-bold
+
