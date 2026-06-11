@@ -1,1 +1,62 @@
-footer 
+footer
+    div(class="flex flex-wrap xl:flex-row gap-20 xl:justify-between")
+        div(class="flex flex-col gap-4 w-[calc(344/1920*100rem)]")
+            img(src="/img/footer-logo.png" class="aspect-[168/64] h-[calc(64/1920*100rem)] w-fit" alt="Footer Logo")
+            div(class="heading-4 font-bold text-Utility/white") Bệnh viện Quốc tế Carmel
+            div(class="flex gap-1 items-center")
+                .fa-regular.fa-house-medical(class="heading-7 aspect-square")
+                div(class="rem:text-[16px]") 190 Trần Lựu, KP.2, P.Bình Trưng, TP.HCM 
+            div(class="flex flex-col gap-3")
+                include ../ContactBtn/ContactBtn.pug
+        div(class="flex flex-col gap-6 w-[calc(244.5/1920*100rem)]")
+            div(class="heading-4 font-bold") Dành cho khách hàng
+            div(class="flex flex-col gap-1.5")
+                ul(class="footer-nav")
+                    li
+                        a(href="#") Đội ngũ bác sĩ
+                            .fa-thin.fa-chevron-right(class="heading-7 aspect-square")
+                    li
+                        a(href="#") Chuyên khoa
+                            .fa-thin.fa-chevron-right(class="heading-7 aspect-square")
+                    li
+                        a(href="#") Dịch vụ
+                            .fa-thin.fa-chevron-right(class="heading-7 aspect-square")
+                    li
+                        a(href="#") Hỏi - Đáp
+                            .fa-thin.fa-chevron-right(class="heading-7 aspect-square")
+                    li
+                        a(href="#") Chính sách bảo mật
+                            .fa-thin.fa-chevron-right(class="heading-7 aspect-square")
+        div(class="flex flex-col gap-6 w-[calc(244.5/1920*100rem)]")
+            div(class="heading-4 font-bold") Giờ làm việc
+            div(class="flex flex-col rem:text-[16px]")
+                div.font-bold Thứ Hai - Thứ Bảy
+                div 07:00 - 16:00
+            div(class="flex flex-col rem:text-[16px]")
+                div.font-bold Chủ Nhật
+                div 07:00 - 12:00
+        div(class="flex flex-col gap-[calc(29/1920*100rem)] w-[calc(327/1920*100rem)]")
+            a(href="#" class="flex items-center w-[calc(327/1920*100rem)] h-12 bg-Primary/2 justify-between rounded-6 heading-6 px-6 py-3 hover:scale-105") Đặt lịch hẹn
+                .fa-thin.fa-chevron-right(class="heading-7 aspect-square")
+            div(class="rem:text-[16px]") Tải App Bệnh viện Quốc tế Carmel ngay!<br>Đặt lịch hẹn, tra cứu kết quả và nhận ưu đãi nhanh chóng
+            div(class="aspect-square h-[calc(112/1920*100rem)]")
+                img(src="/img/footer-qr.png" class="h-[calc(112/1920*100rem)]")
+    div(class="w-full border-b-[1px] opacity-25")
+    div(class="footer-bottom")
+        div(class="my-1 flex flex-col xl:flex-row md:gap-2 text-center items-center")
+            span(class="rem:text-[14px] opacity-75 my-1.5") © 2026 Bệnh viện quốc tế Carmel. All Rights Reserved.
+            a(href="#" class="heading-6 w-fit border-b-[1px] border-transparent hover:border-Utility/white transition-colors duration-300") Điều khoản và điều kiện
+        div(class="h-full flex flex-col md:flex-row md:gap-6 items-center")
+            p(class="rem:text-[16px]") Kết nối với chúng tôi
+            div(class="flex gap-2")
+                a(href="#" class="hover:scale-110")
+                    img(src="/img/facebook.svg" class="aspect-square h-10")
+                a(href="#" class="hover:scale-110")
+                    img(src="/img/messenger.svg" class="aspect-square h-10")
+                a(href="#" class="hover:scale-110")
+                    img(src="/img/youtube.svg" class="aspect-square h-10")
+                a(href="#" class="hover:scale-110")
+                    img(src="/img/tiktok.svg" class="aspect-square h-10")
+                a(href="#" class="hover:scale-110")
+                    img(src="/img/zalo.svg" class="aspect-square h-10")
+            

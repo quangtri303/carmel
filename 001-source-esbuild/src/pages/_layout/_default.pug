@@ -19,9 +19,8 @@ html(lang="en")
 	body(class=bodyClass)
 		block header
 			include ../../components/global/header/header.pug
-		block banner
-		main
-			block main
+		block main
+			include ../../components/global/Main/Main.pug
 		block footer
 			include ../../components/global/footer/footer.pug
 		script(src="./js/core.min.js")

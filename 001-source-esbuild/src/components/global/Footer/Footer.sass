@@ -1,2 +1,12 @@
 footer
-    @apply bg-Primary/3
+    @apply bg-Primary/3 min-h-[calc(484/1920*100rem)] px-10 md:px-20 xl:px-[calc(260/1920*100rem)] pt-16 pb-10 text-Utility/white flex flex-col gap-7
+
+.footer-nav
+    @apply gap-2 flex flex-col
+    li
+        @apply py-[calc(2/1920*100rem)] heading-6 
+        a
+            @apply w-fit border-b-[1px] border-transparent hover:border-Utility/white transition-colors duration-300 flex gap-1 items-center
+
+.footer-bottom
+    @apply flex flex-col xl:flex-row items-center xl:justify-between gap-10
