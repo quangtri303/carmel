@@ -11,16 +11,16 @@ header
 				@apply hidden
 
 .header-nav
-	@apply heading-5 font-bold text-Primary/1 flex items-center gap-5 px-1 list-none m-0
+	@apply heading-5 font-bold text-Primary/1 flex items-center gap-5 px-1 list-none m-0 h-full
 
 	li
-		@apply relative text-Primary/1 flex items-center gap-1
+		@apply relative text-Primary/1 flex items-center gap-1 h-full
 
 		> a
-			@apply block px-1 py-3 hover:text-Primary/2 transition-colors duration-300 ease-out
+			@apply block px-1 hover:text-Primary/2 transition-colors duration-300 ease-out
 
 		ul
-			@apply absolute top-[calc(59/1920*100rem)] left-0 opacity-0 invisible bg-Primary/1 px-7 py-3 rounded-tr-10 rounded-br-10 rounded-bl-10 w-fit whitespace-nowrap
+			@apply absolute top-full left-0 opacity-0 invisible bg-Primary/1 px-7 py-3 rounded-tr-10 rounded-br-10 rounded-bl-10 w-fit whitespace-nowrap
 
 			li
 				@apply relative hover:text-Primary/2 transition-colors duration-300 ease-out w-full text-Utility/white heading-5 font-bold
