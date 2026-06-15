@@ -1,0 +1,46 @@
+.section-doctors
+    .doctor-card
+        @apply bg-Utility/gray-50 rounded-6 overflow-hidden flex flex-col h-full w-[calc(320/1920*100rem)] transition-all duration-300
+
+        &:hover
+            img
+                @apply scale-105
+            .doctor-info
+                @apply bg-Primary/1
+                div
+                    @apply text-Utility/white
+                .specialty
+                    @apply text-Utility/white
+            .doctor-desc
+                @apply bg-Primary/2
+                .bio
+                    @apply text-Utility/white
+                .btn-more
+                    @apply text-Utility/white border-white
+
+    .doctor-image
+        @apply aspect-[320/360] overflow-hidden 
+        img
+            @apply w-full h-full object-cover transition-transform duration-300 ease-out
+
+    .doctor-info
+        @apply px-5 flex flex-col py-3 gap-1 transition-colors duration-300 ease-out
+        div
+            @apply heading-3 font-bold text-Primary/1 transition-colors duration-300 ease-out
+        .specialty
+            @apply heading-6 text-Utility/gray-950-maintext
+    .doctor-desc
+        @apply px-5 flex flex-col py-6 gap-4 transition-colors duration-300 ease-out
+        .bio
+            @apply heading-7 text-Utility/gray-950-maintext line-clamp-3 transition-colors duration-300 ease-out
+        .btn-more
+            @apply flex items-center gap-2 w-fit text-Utility/gray-600-secondarytext rem:text-[16px] border-b-[1px] border-transparent transition-colors duration-300 ease-out
+
+    // Positioning the arrows like in your image
+    .btn-prev, .btn-next
+        @apply absolute top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-Utility/gray-50 rounded-full flex items-center justify-center cursor-pointer hover:bg-Primary/1 hover:text-white transition-all
+    
+    .btn-prev
+        @apply -left-15
+    .btn-next
+        @apply -right-15
