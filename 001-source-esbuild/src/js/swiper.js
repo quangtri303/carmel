@@ -122,6 +122,23 @@ export function swiperInit() {
       },
     },
   });
+  new Swiper(".swiper-facility .swiper", {
+    modules: [Navigation, Pagination],
+    slidesPerView: 1,
+    spaceBetween: 12,
+    navigation: {
+      nextEl: ".swiper-facility .btn-next",
+      prevEl: ".swiper-facility .btn-prev",
+    },
+    breakpoints: {
+      640: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 3,
+      }
+    },
+  });
   new Swiper(".swiper-specialties .swiper", {
     modules: [Navigation, Pagination, Grid],
     slidesPerView: 1,
