@@ -136,7 +136,7 @@ export function swiperInit() {
       },
       1024: {
         slidesPerView: 3,
-      }
+      },
     },
   });
   new Swiper(".swiper-specialties .swiper", {
@@ -163,6 +163,53 @@ export function swiperInit() {
       1280: {
         slidesPerView: 4,
         grid: { rows: 2 },
+      },
+    },
+  });
+  new Swiper(".swiper-service .swiper", {
+    modules: [Pagination, EffectFade, Autoplay],
+    effect: "fade",
+    fadeEffect: { crossFade: true },
+    slidesPerView: 1,
+    loop: true,
+    autoplay: { delay: 5000 },
+    pagination: {
+      el: ".service-pagination",
+      clickable: true,
+      renderBullet: function (index, className) {
+        // FIX: Find the real slide to get the attributes (Required for loop: true)
+        const allRealSlides = document.querySelectorAll(
+          ".swiper-service .swiper-slide:not(.swiper-slide-duplicate)",
+        );
+        const slide = allRealSlides[index];
+
+        const title = slide ? slide.getAttribute("data-title") : "";
+        const desc = slide ? slide.getAttribute("data-desc") : "";
+
+        return `
+                <div class="${className}">
+                    <div class="bullet-content">
+                        <h3 class="bullet-title">${title}</h3>
+                        <div class="bullet-sep"></div>
+                        <p class="bullet-desc">${desc}</p>
+                        <div class="bullet-link">
+                            <span>Tìm hiểu thêm</span>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </div>
+                    </div>
+                </div>
+            `;
+      },
+    },
+    on: {
+      paginationRender: function () {
+        const bullets = document.querySelectorAll(".swiper-service .swiper-pagination-bullet");
+        
+        bullets.forEach((bullet, index) => {
+          bullet.addEventListener("mouseenter", () => {
+            this.slideToLoop(index); 
+          });
+        });
       },
     },
   });
