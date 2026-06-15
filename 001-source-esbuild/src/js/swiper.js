@@ -99,26 +99,53 @@ export function swiperInit() {
       prevEl: ".section-home-banner .btn-prev",
     },
   });
-  new Swiper(".section-doctors .swiper", {
+  new Swiper(".swiper-doctors .swiper", {
     modules: [Navigation, Pagination],
     slidesPerView: 1,
     spaceBetween: 10,
     navigation: {
-      nextEl: ".section-doctors .btn-next",
-      prevEl: ".section-doctors .btn-prev",
+      nextEl: ".swiper-doctors .btn-next",
+      prevEl: ".swiper-doctors .btn-prev",
     },
     breakpoints: {
       640: {
         spaceBetween: 10,
-        slidesPerView: 2, // Tablet
+        slidesPerView: 2,
       },
       1024: {
         spaceBetween: 10,
-        slidesPerView: 3, // Small Laptop
+        slidesPerView: 3,
       },
       1280: {
         spaceBetween: 10,
-        slidesPerView: 4, // Desktop (matching your image)
+        slidesPerView: 4,
+      },
+    },
+  });
+  new Swiper(".swiper-specialties .swiper", {
+    modules: [Navigation, Pagination, Grid],
+    slidesPerView: 1,
+    grid: {
+      rows: 2,
+      fill: "row",
+    },
+    spaceBetween: 24,
+    navigation: {
+      nextEl: ".swiper-specialties .btn-next",
+      prevEl: ".swiper-specialties .btn-prev",
+    },
+    breakpoints: {
+      640: {
+        slidesPerView: 2,
+        grid: { rows: 2 },
+      },
+      1024: {
+        slidesPerView: 3,
+        grid: { rows: 2 },
+      },
+      1280: {
+        slidesPerView: 4,
+        grid: { rows: 2 },
       },
     },
   });
