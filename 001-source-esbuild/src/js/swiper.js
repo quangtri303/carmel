@@ -70,14 +70,23 @@ export function swiperInit () {
 		},
 		modules: [Pagination, Navigation, Autoplay, EffectFade],
 		pagination: {
-			el: ".section-home-banner .swiper-pagination",
-			clickable: true,
-			renderBullet: function (index, className) {
-				const slide = this.slides[index];
-				const title = slide.getAttribute("data-title") || `Slide ${index + 1}`;
-				return `<span class="${className}">${title}</span>`;
-			},
-		},
+    el: ".section-home-banner .swiper-pagination",
+    clickable: true,
+    renderBullet: function (index, className) {
+        const slide = this.slides[index];
+        // Pull data from attributes on the .swiper-slide
+        const title = slide.getAttribute("data-title") || "";
+        const icon = slide.getAttribute("data-icon") || "";
+        
+        // Return the exact structure from your hero-nav
+        return `
+            <div class="${className}">
+                <i class="${icon} heading-1"></i>
+                <div class="bullet-text">${title}</div>
+            </div>
+        `;
+    },
+},
 		navigation: {
 			nextEl: ".section-home-banner .btn-next",
 			prevEl: ".section-home-banner .btn-prev",

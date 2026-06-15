@@ -424,10 +424,10 @@ module.exports = {
         },
       },
       boxShadow: {
-        "Shadow 1": "0px 4px 4px 0px rgba(31,34,39,0.08)",
-        "Shadow 2": "0px 4px 8px 0px rgba(31,34,39,0.08)",
-        "Shadow 4": "0px 8px 32px 0px rgba(0,0,0,0.06)",
-        "Shadow 3": "0px 8px 16px 0px rgba(31,34,39,0.08)",
+        "Shadow-1": "0px 4px 4px 0px rgba(31,34,39,0.08)",
+        "Shadow-2": "0px 4px 8px 0px rgba(31,34,39,0.08)",
+        "Shadow-4": "0px 8px 32px 0px rgba(0,0,0,0.06)",
+        "Shadow-3": "0px 8px 16px 0px rgba(31,34,39,0.08)",
       },
       lineClamp: {
         6: "6",
