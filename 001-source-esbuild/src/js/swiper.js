@@ -122,6 +122,26 @@ export function swiperInit() {
       },
     },
   });
+  new Swiper(".swiper-news .swiper", {
+    modules: [Navigation, Pagination],
+    slidesPerView: 1,
+    spaceBetween: 10,
+    navigation: {
+      nextEl: ".swiper-news .btn-next",
+      prevEl: ".swiper-news .btn-prev",
+    },
+    breakpoints: {
+      640: {
+        slidesPerView: 1,
+      },
+      1024: {
+        slidesPerView: 2,
+      },
+      1280: {
+        slidesPerView: 3,
+      },
+    },
+  });
   new Swiper(".swiper-facility .swiper", {
     modules: [Navigation, Pagination],
     slidesPerView: 1,
@@ -171,13 +191,12 @@ export function swiperInit() {
     effect: "fade",
     fadeEffect: { crossFade: true },
     slidesPerView: 1,
-    loop: true,
+    rewind: true,
     autoplay: { delay: 5000 },
     pagination: {
       el: ".service-pagination",
       clickable: true,
       renderBullet: function (index, className) {
-        // FIX: Find the real slide to get the attributes (Required for loop: true)
         const allRealSlides = document.querySelectorAll(
           ".swiper-service .swiper-slide:not(.swiper-slide-duplicate)",
         );
@@ -201,16 +220,6 @@ export function swiperInit() {
             `;
       },
     },
-    on: {
-      paginationRender: function () {
-        const bullets = document.querySelectorAll(".swiper-service .swiper-pagination-bullet");
-        
-        bullets.forEach((bullet, index) => {
-          bullet.addEventListener("mouseenter", () => {
-            this.slideToLoop(index); 
-          });
-        });
-      },
-    },
+    
   });
 }

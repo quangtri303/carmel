@@ -1,0 +1,61 @@
+section(class="w-full px-10 xl:px-[calc(260/1920*100rem)] py-20 flex flex-col gap-10 items-center bg-Utility/gray-50")
+    div(class="heading-1 font-semibold text-Primary/1") Quy trình khám bệnh
+    div(class="flex flex-col lg:flex-row gap-8 w-calc(440/1920*100rem)")
+        ul(class="booking-step")
+            li
+                div BƯỚC 1
+                p Đặt lịch hẹn &amp; đợi xác nhận lịch hẹn
+            li
+                div BƯỚC 2
+                p Tiếp nhận &amp; sàng lọc, đánh giá tình trạng sức khỏe ban đầu
+            li
+                div BƯỚC 3
+                p Thăm khám cùng chuyên gia, bác sĩ
+            li
+                div BƯỚC 4
+                p Thực hiện cận lâm sàng bằng hệ thống trang thiết bị hiện đại
+            li
+                div BƯỚC 5
+                p Chuyên gia, bác sĩ chẩn đoán, tư vấn &amp; hướng dẫn điều trị cá thể hóa
+            li
+                div BƯỚC 6
+                p Tuân thủ điều trị, chăm sóc &amp; tái khám đúng hẹn nhằm đạt hiệu quả lâu dài
+        div(class="flex w-full rounded-10 overflow-hidden bg-white")
+            img(src="/img/booking.png" class="aspect-[440/556] h-[calc(556/1920*100rem)] hidden xl:block")
+            div(class="flex flex-col w-full py-10 px-8 gap-6")
+                div(class="rem:text-[24px] text-Primary/1 font-semibold") Đặt lịch hẹn
+                form(class="booking-form")
+                    div(class="form-group")
+                        label(for="fullname")
+                        input(type="text" id="fullname" placeholder="Họ và tên *" required)
+                        
+                    div(class="gender-container flex justify-between")
+                        span(class="gender-label") Giới tính *
+                        div(class="gender-group custom-radio")
+                            input(type="radio" name="gender" value="nam")
+                            span(class="radio-box")
+                            span Nam
+                        div(class="gender-group custom-radio")
+                            input(type="radio" name="gender" value="nu" checked)
+                            span(class="radio-box")
+                            span Nữ
+
+                    div(class="form-group")
+                        label(for="birthday")
+                        input(type="date" id="birthday" placeholder="Ngày, tháng, năm sinh *" required)
+
+                    div(class="form-group")
+                        label(for="phone")
+                        input(type="tel" id="phone" placeholder="Số điện thoại *" required)
+
+                    div(class="form-group")
+                        label(for="email")
+                        input(type="email" id="email" placeholder="Email")
+
+                    div(class="form-footer")
+                        div(class="disclaimer") *Chúng tôi cam kết bảo mật thông tin của bạn.
+                        div(class="recaptcha-box")
+                            
+                    button(type="submit" class="submit-btn")
+                        span Đặt hẹn ngay
+                        i.fa-solid.fa-chevron-right
