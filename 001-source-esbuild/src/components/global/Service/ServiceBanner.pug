@@ -1,29 +1,59 @@
-div(class="swiper-service relative w-full aspect-[1760/640] overflow-hidden")
-    div(class="swiper")
-        div(class="swiper-wrapper")
-            div(class="swiper-slide" 
-                data-title="Khám chuyên khoa" 
-                data-desc="Thăm khám cùng chuyên gia, bác sĩ chuyên khoa giàu kinh nghiệm cho hiệu quả điều trị tối ưu")
-                img(src="img/service-1.png" class="w-full h-full object-cover")
-            div(class="swiper-slide" 
-                data-title="Khu khám VIP" 
-                data-desc="Không gian riêng tư, trải nghiệm dịch vụ chăm sóc sức khỏe đẳng cấp")
-                img(src="img/service-2.png" class="w-full h-full object-cover")
-            div(class="swiper-slide" 
-                data-title="Cấp cứu 24/7" 
-                data-desc="Ê-kíp cấp cứu phản ứng nhanh, đảm bảo an toàn cho người bệnh")
-                img(src="img/service-1.png" class="w-full h-full object-cover")
-            div(class="swiper-slide" 
-                data-title="Lọc thận" 
-                data-desc="Hệ thống lọc thận hiện đại, đồng hành sát, đảm bảo hiệu quả điều trị")
-                img(src="img/service-2.png" class="w-full h-full object-cover")
-            div(class="swiper-slide" 
-                data-title="Gói khám cá nhân" 
-                data-desc="Gói khám đa dạng theo nhu cầu, chăm sóc sức khỏe toàn diện")
-                img(src="img/service-1.png" class="w-full h-full object-cover")
-            div(class="swiper-slide" 
-                data-title="Gói khám doanh nghiệp" 
-                data-desc="Giải pháp chăm sóc sức khỏe cho doanh nghiệp, nâng cao phúc lợi cho nhân viên")
-                img(src="img/service-2.png" class="w-full h-full object-cover")
-            
-    div(class="service-pagination swiper-pagination")
+div(class="swiper-service relative w-full h-[calc(640/1920*100rem)] overflow-hidden")
+    .service-bg
+        img#service-bg-1(src="/img/service-1.png" class="active")
+        img#service-bg-2(src="/img/service-2.png")
+        img#service-bg-3(src="/img/service-1.png")
+        img#service-bg-4(src="/img/service-2.png")
+        img#service-bg-5(src="/img/service-1.png")
+        img#service-bg-6(src="/img/service-2.png")
+    div(class="absolute bottom-0 left-0 w-full h-full")
+        .swiper(class="h-full")
+            .swiper-wrapper(class="flex items-end h-full")
+                div(class="swiper-slide" data-index="1")
+                    .service-card
+                        div(class="service-title") Khám chuyên khoa
+                        .service-sep
+                        .service-desc Thăm khám cùng chuyên gia, bác sĩ chuyên khoa giàu kinh nghiệm cho hiệu quả điều trị tối ưu
+                        a.service-link(href="#")
+                            div Tìm hiểu thêm
+                            i.fa-thin.fa-chevron-right
+                div(class="swiper-slide" data-index="2")
+                    .service-card
+                        div(class="service-title") Khu khám VIP
+                        .service-sep
+                        .service-desc Không gian riêng tư, trải nghiệm dịch vụ chăm sóc sức khỏe 
+                        a.service-link(href="#")
+                            div Tìm hiểu thêm
+                            i.fa-thin.fa-chevron-right
+                div(class="swiper-slide" data-index="3")
+                    .service-card
+                        div(class="service-title") Cấp cứu 24/7
+                        .service-sep
+                        .service-desc Ê-kíp cấp cứu phản ứng nhanh, đảm bảo an toàn cho người bệnh
+                        a.service-link(href="#")
+                            div Tìm hiểu thêm
+                            i.fa-thin.fa-chevron-right
+                div(class="swiper-slide" data-index="4")
+                    .service-card
+                        div(class="service-title") Lọc thận
+                        .service-sep
+                        .service-desc Hệ thống lọc thận hiện đại, đồng hành sát, đảm bảo hiệu quả điều trị
+                        a.service-link(href="#")
+                            div Tìm hiểu thêm
+                            i.fa-thin.fa-chevron-right
+                div(class="swiper-slide" data-index="5")
+                    .service-card
+                        div(class="service-title") Gói khám cá nhân
+                        .service-sep
+                        .service-desc Gói khám đa dạng theo nhu cầu, chăm sóc sức khỏe toàn diện
+                        a.service-link(href="#")
+                            div Tìm hiểu thêm
+                            i.fa-thin.fa-chevron-right
+                div(class="swiper-slide" data-index="6")
+                    .service-card
+                        div(class="service-title") Gói khám doanh nghiệp
+                        .service-sep
+                        .service-desc Giải pháp chăm sóc sức khỏe cho doanh nghiệp, nâng cao phúc lợi cho nhân viên
+                        a.service-link(href="#")
+                            div Tìm hiểu thêm
+                            i.fa-thin.fa-chevron-right

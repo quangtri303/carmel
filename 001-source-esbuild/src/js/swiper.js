@@ -11,6 +11,7 @@ import {
 /**
  * @param swiperInit
  */
+
 export function swiperInit() {
   $(".swiper-column-auto").each(function (index) {
     const $this = $(this);
@@ -100,12 +101,15 @@ export function swiperInit() {
     },
   });
   new Swiper(".swiper-doctors .swiper", {
-    modules: [Navigation, Pagination],
+    modules: [Navigation, Pagination, Autoplay],
     slidesPerView: 1,
     spaceBetween: 10,
     navigation: {
       nextEl: ".swiper-doctors .btn-next",
       prevEl: ".swiper-doctors .btn-prev",
+    },
+    autoplay: {
+      delay: 5000,
     },
     breakpoints: {
       640: {
@@ -186,40 +190,45 @@ export function swiperInit() {
       },
     },
   });
+
   new Swiper(".swiper-service .swiper", {
-    modules: [Pagination, EffectFade, Autoplay],
-    effect: "fade",
-    fadeEffect: { crossFade: true },
-    slidesPerView: 1,
-    rewind: true,
-    autoplay: { delay: 5000 },
-    pagination: {
-      el: ".service-pagination",
-      clickable: true,
-      renderBullet: function (index, className) {
-        const allRealSlides = document.querySelectorAll(
-          ".swiper-service .swiper-slide:not(.swiper-slide-duplicate)",
-        );
-        const slide = allRealSlides[index];
+    modules: [Autoplay],
+    slidesPerView: 1.2,
+    spaceBetween: 0,
+    autoplay: {
+      delay: 5000,
+    },
+    loop: true,
+    slideToClickedSlide: true,
+    breakpoints: {
+      768: { slidesPerView: 4 },
+      1200: { slidesPerView: 6, autoplay: false, loop: false, slideToClickedSlide: false },
+    },
+    on: {
+      slideChange: function () {
+        const bgIndex = this.slides[this.activeIndex].dataset.index;
 
-        const title = slide ? slide.getAttribute("data-title") : "";
-        const desc = slide ? slide.getAttribute("data-desc") : "";
+        document
+          .querySelectorAll(".service-bg img")
+          .forEach((img) => img.classList.remove("active"));
 
-        return `
-                <div class="${className}">
-                    <div class="bullet-content">
-                        <h3 class="bullet-title">${title}</h3>
-                        <div class="bullet-sep"></div>
-                        <p class="bullet-desc">${desc}</p>
-                        <div class="bullet-link">
-                            <span>Tìm hiểu thêm</span>
-                            <i class="fa-solid fa-chevron-right"></i>
-                        </div>
-                    </div>
-                </div>
-            `;
+        document
+          .getElementById(`service-bg-${bgIndex}`)
+          ?.classList.add("active");
       },
     },
-    
   });
 }
+document.querySelectorAll(".swiper-service .swiper-slide").forEach(slide => {
+    slide.addEventListener("mouseenter", () => {
+        const bgIndex = slide.dataset.index;
+
+        document
+            .querySelectorAll(".service-bg img")
+            .forEach(img => img.classList.remove("active"));
+
+        document
+            .getElementById(`service-bg-${bgIndex}`)
+            ?.classList.add("active");
+    });
+});
