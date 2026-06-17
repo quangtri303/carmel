@@ -67,37 +67,30 @@ export function swiperInit() {
       },
     });
   });
-  new Swiper(".section-home-banner .swiper", {
+  new Swiper(".swiper-hero .swiper", {
     slidesPerView: 1,
     spaceBetween: 0,
     speed: 1000,
     loop: true,
     effect: "fade",
     autoplay: {
-      delay: 3500,
+      delay: 50000,
     },
     modules: [Pagination, Navigation, Autoplay, EffectFade],
     pagination: {
-      el: ".section-home-banner .swiper-pagination",
+      el: ".swiper-hero .swiper-pagination",
       clickable: true,
       renderBullet: function (index, className) {
         const slide = this.slides[index];
-        // Pull data from attributes on the .swiper-slide
-        const title = slide.getAttribute("data-title") || "";
-        const icon = slide.getAttribute("data-icon") || "";
 
-        // Return the exact structure from your hero-nav
         return `
-            <div class="${className}">
-                <i class="${icon} heading-1"></i>
-                <div class="bullet-text">${title}</div>
-            </div>
+            <div class="${className}"></div>
         `;
       },
     },
     navigation: {
-      nextEl: ".section-home-banner .btn-next",
-      prevEl: ".section-home-banner .btn-prev",
+      nextEl: ".swiper-hero .btn-next",
+      prevEl: ".swiper-hero .btn-prev",
     },
   });
   new Swiper(".swiper-doctors .swiper", {

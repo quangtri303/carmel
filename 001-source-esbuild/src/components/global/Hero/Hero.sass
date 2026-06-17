@@ -1,30 +1,51 @@
-// .hero-nav
-//     @apply absolute bottom-7 left-[calc(258/1920*100rem)] w-[calc(842/1920*100rem)] h-[calc(116/1920*100rem)]
-//     ul
-//         @apply flex justify-between h-full rounded-6 border-Primary/2 border-[1px] overflow-hidden
-//         li
-//             @apply w-full h-full hover:bg-Primary/2 transition-colors duration-300
-//             a
-//                 @apply flex h-full gap-6 justify-center items-center heading-3 font-bold
+.hero-bg
+    @apply h-full w-full relative
+    img
+        @apply absolute left-0 top-0 w-full h-full object-cover opacity-0 transition-opacity duration-700 z-0
+.swiper-slide-active 
+    .hero-bg
+        img
+            @apply opacity-100 z-0
 
-.section-home-banner
+.pagination
+    @apply absolute bottom-0 left-0 z-20
+    @apply flex items-center w-full h-25 xl:justify-end justify-center
+    @apply xl:px-[calc(250/1920*100rem)] gap-8
+
     .swiper-pagination
-        --swiper-pagination-bullet-horizontal-gap: 0px
-        --swiper-pagination-bullet-vertical-gap: 0px
-        @apply absolute bottom-7 left-[calc(258/1920*100rem)]
-        @apply w-[calc(842/1920*100rem)] h-[calc(116/1920*100rem)]
-        @apply flex justify-between rounded-6 border-Primary/2 border-[1px] overflow-hidden z-10
+        @apply flex gap-2 static
 
-    .swiper-pagination-bullet
-        @apply w-full h-full rounded-none opacity-100 m-0
-        @apply flex flex-row gap-6 justify-center items-center
-        @apply bg-Utility/white text-Primary/1 transition-all duration-300
-        @apply heading-3 font-bold cursor-pointer
-		
-
-        &-active
-            @apply bg-Primary/2/60 text-Utility/white
+        .swiper-pagination-bullet
+            @apply m-0 opacity-50 transition-all duration-300 bg-Primary/1 w-12 h-0.5
             
+            &-active
+                @apply opacity-100
 
+    .btn-prev, .btn-next
+        i
+            @apply z-10 w-10 h-10 bg-Utility/gray-50 rounded-full flex items-center justify-center cursor-pointer hover:bg-Primary/1 hover:text-white transition-all
+            
+.banner-nav
+    @apply absolute bottom-20 xl:bottom-7 xl:left-[calc(258/1920*100rem)] flex
+    @apply w-full xl:w-[calc(842/1920*100rem)] h-[calc(116/1920*100rem)]
+    @apply flex rounded-6 border-Primary/2 border-[1px] overflow-hidden z-50
+
+    li
+        @apply flex w-full h-full
+        a
+            @apply rounded-none w-full
+            @apply flex flex-col xl:flex-row gap-2 xl:gap-6 justify-center items-center
+            @apply bg-Utility/white text-Primary/1 transition-all duration-300
+            @apply heading-5 xl:heading-3 font-bold cursor-pointer
+            i
+                @apply heading-1
         &:hover
-            @apply bg-Primary/2 text-Primary/3
+            a
+                @apply bg-Primary/2
+    li:first-child
+        a
+            @apply bg-Primary/2/60 text-Utility/white
+        &:hover
+            a
+                @apply bg-Primary/2 text-Primary/1
+
