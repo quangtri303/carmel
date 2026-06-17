@@ -1,15 +1,17 @@
 .news-category
-    @apply flex gap-4 w-full justify-center
+    @apply flex flex-wrap gap-4 w-full justify-center
     li
         @apply bg-Utility/gray-50 text-Utility/gray-950-maintext rounded-4 px-3 py-1 cursor-pointer transition-colors duration-300
         &:hover
+            @apply bg-Primary/1 text-Utility/white
+        &.active
             @apply bg-Primary/1 text-Utility/white
 
 .swiper-news
     .swiper-slide
         @apply h-auto
     .news-card
-        @apply bg-Utility/gray-50 w-[calc(440/1920*100rem)] rounded-6 overflow-hidden flex flex-col h-full
+        @apply bg-Utility/gray-50 w-full rounded-6 overflow-hidden flex flex-col h-full
         &:hover
             .news-img
                 @apply scale-105
@@ -17,7 +19,8 @@
                 .news-title
                     @apply text-Primary/1
         .news-img
-            @apply aspect-[2/1] w-full transition-all duration-300
+            @apply w-full transition-all duration-300
+            
         .news-date
             @apply px-6 py-3 body-3 text-Utility/gray-600-secondarytext border-b-[1px] border-Utility/gray-200
         .news-info
@@ -26,10 +29,15 @@
                 @apply heading-4 font-bold text-Utility/gray-950-maintext transition-colors duration-300
             .news-desc
                 @apply rem:text-[16px] text-Utility/gray-600-secondarytext
+
+.btn-swiper
+    @apply flex relative mt-5 w-full justify-center gap-4 z-10
     .btn-prev, .btn-next
-        @apply absolute top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-Utility/gray-50 rounded-full flex items-center justify-center cursor-pointer hover:bg-Primary/1 hover:text-white transition-all
-    
-    .btn-prev
-        @apply -left-12
-    .btn-next
-        @apply -right-12
+        @apply w-10 h-10 bg-Utility/gray-50 rounded-full flex items-center justify-center cursor-pointer hover:bg-Primary/1 hover:text-white transition-all
+
+    @media (min-width: 1200px)
+        @apply absolute top-1/2 justify-between mt-0
+        .btn-prev
+            @apply absolute -left-15
+        .btn-next
+            @apply absolute -right-15

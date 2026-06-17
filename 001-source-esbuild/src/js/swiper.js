@@ -122,19 +122,17 @@ export function swiperInit() {
   new Swiper(".swiper-news .swiper", {
     modules: [Navigation, Pagination],
     slidesPerView: 1,
-    spaceBetween: 10,
+    spaceBetween: 40,
+    rewind: true,
     navigation: {
       nextEl: ".swiper-news .btn-next",
       prevEl: ".swiper-news .btn-prev",
     },
     breakpoints: {
-      640: {
-        slidesPerView: 1,
-      },
-      1024: {
+      768: {
         slidesPerView: 2,
       },
-      1280: {
+      1200: {
         slidesPerView: 3,
       },
     },
