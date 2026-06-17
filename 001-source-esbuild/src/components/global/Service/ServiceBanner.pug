@@ -1,3 +1,38 @@
+-
+    var serviceList = [
+        {
+            index: "1",
+            title: "Khám chuyên khoa",
+            desc: "Thăm khám cùng chuyên gia, bác sĩ chuyên khoa giàu kinh nghiệm cho hiệu quả điều trị tối ưu"
+        },
+        {
+            index: "2",
+            title: "Khu khám VIP",
+            desc: "Không gian riêng tư, trải nghiệm dịch vụ chăm sóc sức khỏe "
+        },
+        {
+            index: "3",
+            title: "Cấp cứu 24/7",
+            desc: "Ê-kíp cấp cứu phản ứng nhanh, đảm bảo an toàn cho người bệnh"
+        },
+        {
+            index: "4",
+            title: "Lọc thận",
+            desc: "Hệ thống lọc thận hiện đại, đồng hành sát, đảm bảo hiệu quả điều trị"
+        },
+        {
+            index: "5",
+            title: "Gói khám cá nhân",
+            desc: "Gói khám đa dạng theo nhu cầu, chăm sóc sức khỏe toàn diện"
+        },
+        {
+            index: "6",
+            title: "Gói khám doanh nghiệp",
+            desc: "Giải pháp chăm sóc sức khỏe cho doanh nghiệp, nâng cao phúc lợi cho nhân viên"
+        },
+
+    ]
+
 div(class="swiper-service relative w-full h-[calc(640/1920*100rem)] overflow-hidden")
     .service-bg
         img#service-bg-1(src="/img/service-1.png" class="active")
@@ -9,51 +44,13 @@ div(class="swiper-service relative w-full h-[calc(640/1920*100rem)] overflow-hid
     div(class="absolute bottom-0 left-0 w-full h-full")
         .swiper(class="h-full")
             .swiper-wrapper(class="flex items-end h-full")
-                div(class="swiper-slide" data-index="1")
-                    .service-card
-                        div(class="service-title") Khám chuyên khoa
-                        .service-sep
-                        .service-desc Thăm khám cùng chuyên gia, bác sĩ chuyên khoa giàu kinh nghiệm cho hiệu quả điều trị tối ưu
-                        a.service-link(href="#")
-                            div Tìm hiểu thêm
-                            i.fa-thin.fa-chevron-right
-                div(class="swiper-slide" data-index="2")
-                    .service-card
-                        div(class="service-title") Khu khám VIP
-                        .service-sep
-                        .service-desc Không gian riêng tư, trải nghiệm dịch vụ chăm sóc sức khỏe 
-                        a.service-link(href="#")
-                            div Tìm hiểu thêm
-                            i.fa-thin.fa-chevron-right
-                div(class="swiper-slide" data-index="3")
-                    .service-card
-                        div(class="service-title") Cấp cứu 24/7
-                        .service-sep
-                        .service-desc Ê-kíp cấp cứu phản ứng nhanh, đảm bảo an toàn cho người bệnh
-                        a.service-link(href="#")
-                            div Tìm hiểu thêm
-                            i.fa-thin.fa-chevron-right
-                div(class="swiper-slide" data-index="4")
-                    .service-card
-                        div(class="service-title") Lọc thận
-                        .service-sep
-                        .service-desc Hệ thống lọc thận hiện đại, đồng hành sát, đảm bảo hiệu quả điều trị
-                        a.service-link(href="#")
-                            div Tìm hiểu thêm
-                            i.fa-thin.fa-chevron-right
-                div(class="swiper-slide" data-index="5")
-                    .service-card
-                        div(class="service-title") Gói khám cá nhân
-                        .service-sep
-                        .service-desc Gói khám đa dạng theo nhu cầu, chăm sóc sức khỏe toàn diện
-                        a.service-link(href="#")
-                            div Tìm hiểu thêm
-                            i.fa-thin.fa-chevron-right
-                div(class="swiper-slide" data-index="6")
-                    .service-card
-                        div(class="service-title") Gói khám doanh nghiệp
-                        .service-sep
-                        .service-desc Giải pháp chăm sóc sức khỏe cho doanh nghiệp, nâng cao phúc lợi cho nhân viên
-                        a.service-link(href="#")
-                            div Tìm hiểu thêm
-                            i.fa-thin.fa-chevron-right
+                each service in serviceList
+                    div(class="swiper-slide" data-index=service.index)
+                        .service-card
+                            div(class="service-title") #{service.title}
+                            .service-sep
+                            .service-desc #{service.desc}
+                            a.service-link(href="#")
+                                div Tìm hiểu thêm
+                                i.fa-thin.fa-chevron-right
+                

@@ -1,6 +1,6 @@
 .swiper-doctors
     .doctor-card
-        @apply bg-Utility/gray-50 rounded-6 overflow-hidden flex flex-col h-full w-[calc(320/1920*100rem)] transition-all duration-300
+        @apply bg-Utility/gray-50 rounded-6 overflow-hidden flex flex-col h-full w-full transition-all duration-300
 
         &:hover
             img
@@ -36,10 +36,14 @@
         .btn-more
             @apply flex items-center gap-2 w-fit text-Utility/gray-600-secondarytext rem:text-[16px] border-b-[1px] border-transparent transition-colors duration-300 ease-out
 
+.btn-swiper
+    @apply flex relative mt-5 w-full justify-center gap-4 z-10
     .btn-prev, .btn-next
-        @apply absolute top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-Utility/gray-50 rounded-full flex items-center justify-center cursor-pointer hover:bg-Primary/1 hover:text-white transition-all
-    
-    .btn-prev
-        @apply -left-15
-    .btn-next
-        @apply -right-15
+        @apply w-10 h-10 bg-Utility/gray-50 rounded-full flex items-center justify-center cursor-pointer hover:bg-Primary/1 hover:text-white transition-all
+
+    @media (min-width: 1200px)
+        @apply absolute top-1/2 justify-between mt-0
+        .btn-prev
+            @apply absolute -left-15 -translate-y-1/2
+        .btn-next
+            @apply absolute -right-15 -translate-y-1/2

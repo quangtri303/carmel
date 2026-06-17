@@ -15,7 +15,7 @@ export const header = {
   },
   mobile: function () {
     // Hamburger toggle
-    $(".header-hambuger").on("click", function () {
+    $(".header-hamburger").on("click", function () {
       $(this).toggleClass("active");
       $("body").toggleClass("isOpenMenu");
       $(".header-mobile-nav").toggleClass("active");
@@ -28,7 +28,7 @@ export const header = {
       const icon = $(this).find(".fa-chevron-right");
 
       submenu.slideToggle(300);
-      icon.toggleClass("rotate-90 transition-transform duration-300");
+      icon.toggleClass("rotate-90");
     });
   },
   initVariable: function () {

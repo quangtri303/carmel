@@ -1,95 +1,100 @@
-header(class="bg-Utility/white min-h-27.5 w-full px-10 xl:px-40 flex flex-col md:flex-row pt-2.5 justify-between z-100")
-  img(src='/img/logo.png' class="aspect-[196.88/75] h-[calc(75/1920*100rem)] w-[calc(196.88/1920*100rem)] self-center" alt="Logo")
-  div(class="flex flex-col")
-    div(class="hidden xl:flex gap-3 justify-end")
-        include ../ContactBtn/ContactBtn.pug
-    div(class="flex gap-6 h-17 items-center justify-end")
-        ul(class="header-nav hidden xl:flex")
-            li(class="group")
-                a(href="#" class="group-hover:text-Primary/2") VỀ CHÚNG TÔI
-                .fa-solid.fa-chevron-down(class="text-Utility/gray-950-maintext h-3 mx-2 mb-1 group-hover:rotate-180 transition-transform duration-300 aspect-square regular")
-                ul(class="group-hover:opacity-100 opacity-0 invisible group-hover:visible transition-opacity duration-300")
+header(class="bg-Utility/white min-h-27.5 w-full  z-100")
+    div(class="px-5 md:px-10 xl:px-40 flex flex-row pt-2.5 justify-between items-center")
+        div(class="h-full flex items-center")
+            img(src='/img/logo.png' class="h-12 xl:h-18" alt="Logo")
+        div(class="flex flex-col")
+            div(class="hidden xl:flex gap-3 justify-end")
+                include ../ContactBtn/ContactBtn.pug
+            div(class="flex gap-6 h-17 items-center justify-end")
+                ul(class="header-nav hidden xl:flex")
+                    li(class="group")
+                        a(href="#" class="group-hover:text-Primary/2") VỀ CHÚNG TÔI
+                        .fa-solid.fa-chevron-down(class="text-Utility/gray-950-maintext h-3 mx-2 mb-1 group-hover:rotate-180 transition-transform duration-300 aspect-square regular")
+                        ul(class="group-hover:opacity-100 opacity-0 invisible group-hover:visible transition-opacity duration-300")
+                            li
+                                a(href="#") Tầm nhìn - Sứ mệnh
+                            li
+                                a(href="#") Sơ đồ tổ chức
+                            li
+                                a(href="#") Không gian &amp; Cơ sở vật chất
+                            li
+                                a(href="#") Thành tựu &amp; Giải thưởng
+                            li
+                                a(href="#") Gia nhập đội ngũ Carmel
+                            li
+                                a(href="#") Cảm nhận khách hàng
                     li
-                        a(href="#") Tầm nhìn - Sứ mệnh
+                        a(href="#") ĐỘI NGŨ BÁC SĨ
                     li
-                        a(href="#") Sơ đồ tổ chức
+                        a(href="#") CHUYÊN KHOA
                     li
-                        a(href="#") Không gian &amp; Cơ sở vật chất
+                        a(href="#") DỊCH VỤ
+                    li(class="group")
+                        a(href="#" class="group-hover:text-Primary/2") TIN TỨC
+                        .fa-solid.fa-chevron-down(class="text-Utility/gray-950-maintext h-3 mx-2 mb-1 group-hover:rotate-180 transition-transform duration-300 aspect-square regular")
+                        ul(class="group-hover:opacity-100 opacity-0 invisible group-hover:visible transition-opacity duration-300")
+                            li
+                                a(href="#") Tin y tế
+                            li
+                                a(href="#") Tin tức hoạt động
+                            li
+                                a(href="#") Y khoa thưởng thức
+                            li
+                                a(href="#") Hỏi - Đáp
                     li
-                        a(href="#") Thành tựu &amp; Giải thưởng
-                    li
-                        a(href="#") Gia nhập đội ngũ Carmel
-                    li
-                        a(href="#") Cảm nhận khách hàng
-            li
-                a(href="#") ĐỘI NGŨ BÁC SĨ
-            li
-                a(href="#") CHUYÊN KHOA
-            li
-                a(href="#") DỊCH VỤ
-            li(class="group")
-                a(href="#" class="group-hover:text-Primary/2") TIN TỨC
-                .fa-solid.fa-chevron-down(class="text-Utility/gray-950-maintext h-3 mx-2 mb-1 group-hover:rotate-180 transition-transform duration-300 aspect-square regular")
-                ul(class="group-hover:opacity-100 opacity-0 invisible group-hover:visible transition-opacity duration-300")
-                    li
-                        a(href="#") Tin y tế
-                    li
-                        a(href="#") Tin tức hoạt động
-                    li
-                        a(href="#") Y khoa thưởng thức
-                    li
-                        a(href="#") Hỏi - Đáp
-            li
-                a(href="#") HỖ TRỢ KHÁCH HÀNG
-        div(class="flex bg-Primary/1/10 rounded-20 gap-0.5 p-0.5 h-8 items-center")
-            button(class="bg-Primary/1 rounded-20 px-2 py-1 rem:text-[14px] font-bold") VN
-            button(class="rounded-20 text-Primary/1 px-2 py-1 rem:text-[14px]") EN
-        div(class="header-search")
-            input(class="" type="text" placeholder="Tìm kiếm")
-            .fa-light.fa-magnifying-glass
-        .fa-solid.fa-bars(class="header-hambuger text-Utility/gray-950-maintext aspect-square heading-3 block xl:hidden cursor-pointer hover:text-Primary/1 transition-colors duration-300")
-    //- Mobile Menu
-    ul(class="header-mobile-nav")
-        li
-            a(href="#" class="header-mobile-toggle") VỀ CHÚNG TÔI
-                .fa-solid.fa-chevron-right(class="ml-auto h-3 aspect-square")
-            ul(class="header-mobile-submenu")
+                        a(href="#") HỖ TRỢ KHÁCH HÀNG
+                div(class="flex bg-Primary/1/10 rounded-20 gap-0.5 p-0.5 h-8 items-center")
+                    button(class="bg-Primary/1 rounded-20 px-2 py-1 rem:text-[14px] font-bold") VN
+                    button(class="rounded-20 text-Primary/1 px-2 py-1 rem:text-[14px]") EN
+                div(class="header-search")
+                    input(class="" type="text" placeholder="Tìm kiếm")
+                    .fa-light.fa-magnifying-glass
+                div(class="header-hamburger")
+                    span
+                    span
+                    span
+            //- Mobile Menu
+            ul(class="header-mobile-nav")
                 li
-                    a(href="#") Tầm nhìn - Sứ mệnh
+                    a(href="#" class="header-mobile-toggle") VỀ CHÚNG TÔI
+                        .fa-solid.fa-chevron-right(class="ml-auto h-3 aspect-square transition-transform duration-300 ease-out")
+                    ul(class="header-mobile-submenu")
+                        li
+                            a(href="#") Tầm nhìn - Sứ mệnh
+                        li
+                            a(href="#") Sơ đồ tổ chức
+                        li
+                            a(href="#") Không gian &amp; Cơ sở vật chất
+                        li
+                            a(href="#") Thành tựu &amp; Giải thưởng
+                        li
+                            a(href="#") Gia nhập đội ngũ Carmel
+                        li
+                            a(href="#") Cảm nhận khách hàng
                 li
-                    a(href="#") Sơ đồ tổ chức
+                    a(href="#") ĐỘI NGŨ BÁC SĨ
                 li
-                    a(href="#") Không gian &amp; Cơ sở vật chất
+                    a(href="#") CHUYÊN KHOA
                 li
-                    a(href="#") Thành tựu &amp; Giải thưởng
+                    a(href="#") DỊCH VỤ
                 li
-                    a(href="#") Gia nhập đội ngũ Carmel
-                li
-                    a(href="#") Cảm nhận khách hàng
-        li
-            a(href="#") ĐỘI NGŨ BÁC SĨ
-        li
-            a(href="#") CHUYÊN KHOA
-        li
-            a(href="#") DỊCH VỤ
-        li
-            a(class="header-mobile-toggle ") TIN TỨC
-                .fa-solid.fa-chevron-right(class="ml-auto h-3 aspect-square")
-            ul(class="header-mobile-submenu")
-                li
-                    a(href="#") Tin y tế
-                li
-                    a(href="#") Tin tức hoạt động
-                li
-                    a(href="#") Y khoa thưởng thức
-                li
-                    a(href="#") Hỏi - Đáp
-        li(class="header-mobile-item")
-            a(href="#" class="block px-4 py-3 hover:bg-Primary/2 transition-colors duration-300") HỖ TRỢ KHÁCH HÀNG
-        li(class="header-mobile-item")
-            a(href="tel:0977851818" class="block px-4 py-3 hover:bg-Primary/2 transition-colors duration-300") Liên hệ: 0977 851 818
-        li(class="header-mobile-item")
-            a(href="tel:0977851818" class="block px-4 py-3 hover:bg-Primary/2 transition-colors duration-300") Tổng đài: 0977 851 818
-        li(class="header-mobile-item")
-            a(href="tel:1155" class="block px-4 py-3 hover:bg-[#DA0000]/2 transition-colors duration-300") Cấp cứu: *1155
-        
+                    a(class="header-mobile-toggle ") TIN TỨC
+                        .fa-solid.fa-chevron-right(class="ml-auto h-3 aspect-square transition-transform duration-300 ease-out")
+                    ul(class="header-mobile-submenu")
+                        li
+                            a(href="#") Tin y tế
+                        li
+                            a(href="#") Tin tức hoạt động
+                        li
+                            a(href="#") Y khoa thưởng thức
+                        li
+                            a(href="#") Hỏi - Đáp
+                li(class="header-mobile-item")
+                    a(href="#" class="block px-4 py-3 hover:bg-Primary/2 transition-colors duration-300") HỖ TRỢ KHÁCH HÀNG
+                li(class="header-mobile-item")
+                    a(href="tel:0977851818" class="block px-4 py-3 hover:bg-Primary/2 transition-colors duration-300") Liên hệ: 0977 851 818
+                li(class="header-mobile-item")
+                    a(href="tel:0977851818" class="block px-4 py-3 hover:bg-Primary/2 transition-colors duration-300") Tổng đài: 0977 851 818
+                li(class="header-mobile-item")
+                    a(href="tel:1155" class="block px-4 py-3 hover:bg-[#DA0000]/2 transition-colors duration-300") Cấp cứu: *1155
+                

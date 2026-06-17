@@ -37,7 +37,7 @@ header
 			@apply text-Utility/white
 
 .header-mobile-nav
-	@apply fixed left-0 top-[calc(165/1920*100rem)] md:top-24 w-full bg-Primary/1 list-none m-0 p-0 overflow-y-auto opacity-0 invisible transition-opacity duration-300 ease-out z-9
+	@apply fixed left-0 top-20 w-full bg-Primary/1 list-none m-0 p-0 overflow-y-auto opacity-0 invisible transition-opacity duration-300 ease-out z-9
 
 	&.active
 		@apply opacity-100 visible
@@ -55,3 +55,16 @@ header
 .header-mobile-toggle
 	@apply text-left text-Utility/white heading-6 font-bold
 
+.header-hamburger
+	@apply w-8 h-6 flex flex-col justify-between cursor-pointer xl:hidden
+    
+	span
+		@apply w-full h-1 bg-Utility/gray-950-maintext transition-all duration-300 rounded-full
+    
+	&.active
+		span:nth-child(1)
+			transform: translateY(9px) rotate(45deg)
+		span:nth-child(2)
+			@apply opacity-0
+		span:nth-child(3)
+			transform: translateY(-9px) rotate(-45deg)

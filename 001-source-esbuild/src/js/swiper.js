@@ -139,18 +139,34 @@ export function swiperInit() {
   });
   new Swiper(".swiper-facility .swiper", {
     modules: [Navigation, Pagination],
-    slidesPerView: 1,
+    slidesPerView: 2,
     spaceBetween: 12,
     navigation: {
       nextEl: ".swiper-facility .btn-next",
       prevEl: ".swiper-facility .btn-prev",
     },
     breakpoints: {
-      640: {
-        slidesPerView: 2,
-      },
-      1024: {
+      768: {
         slidesPerView: 3,
+      },
+    },
+    on: {
+      init: function () {
+        const mainImg = document.getElementById("main-img");
+        const thumbs = document.querySelectorAll(
+          ".swiper-facility .facility-card img",
+        );
+
+        thumbs.forEach((img) => {
+          img.addEventListener("click", function () {
+            const newSrc = this.getAttribute("src");
+            mainImg.style.opacity = "0";
+            setTimeout(() => {
+              mainImg.src = newSrc;
+              mainImg.style.opacity = "1";
+            }, 300); 
+          });
+        });
       },
     },
   });
@@ -193,7 +209,12 @@ export function swiperInit() {
     slideToClickedSlide: true,
     breakpoints: {
       768: { slidesPerView: 4 },
-      1200: { slidesPerView: 6, autoplay: false, loop: false, slideToClickedSlide: false },
+      1200: {
+        slidesPerView: 6,
+        autoplay: false,
+        loop: false,
+        slideToClickedSlide: false,
+      },
     },
     on: {
       slideChange: function () {
@@ -210,16 +231,14 @@ export function swiperInit() {
     },
   });
 }
-document.querySelectorAll(".swiper-service .swiper-slide").forEach(slide => {
-    slide.addEventListener("mouseenter", () => {
-        const bgIndex = slide.dataset.index;
+document.querySelectorAll(".swiper-service .swiper-slide").forEach((slide) => {
+  slide.addEventListener("mouseenter", () => {
+    const bgIndex = slide.dataset.index;
 
-        document
-            .querySelectorAll(".service-bg img")
-            .forEach(img => img.classList.remove("active"));
+    document
+      .querySelectorAll(".service-bg img")
+      .forEach((img) => img.classList.remove("active"));
 
-        document
-            .getElementById(`service-bg-${bgIndex}`)
-            ?.classList.add("active");
-    });
+    document.getElementById(`service-bg-${bgIndex}`)?.classList.add("active");
+  });
 });

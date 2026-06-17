@@ -17,8 +17,8 @@
             @apply transition-all duration-500 ease-in-out
 
             .service-title
-                @apply heading-4 font-bold text-white text-center
-                @apply h-full flex items-center justify-center
+                @apply heading-4 font-bold text-white whitespace-nowrap
+                @apply h-full absolute left-1/2 -translate-x-1/2
                 @apply transition-all duration-500
 
             .service-sep,
@@ -32,11 +32,11 @@
         .service-card
             @apply bg-Primary/1 h-fit
             .service-title
-                @apply text-left h-auto mb-0 flex justify-start
+                @apply h-auto mb-0 absolute left-4 translate-x-1
 
             .service-sep
                 @apply opacity-100 visible translate-y-0
-                @apply w-24 h-0 border-b-[2px] border-Primary/2 my-4
+                @apply w-24 h-0 border-b-[2px] border-Primary/2 mb-4 mt-10
 
             .service-desc
                 @apply opacity-100 visible translate-y-0
@@ -61,7 +61,7 @@
                 @apply bg-black/40 h-16
 
                 .service-title
-                    @apply text-center h-full mb-0 block
+                    @apply h-full mb-0 absolute left-1/2 -translate-x-1/2
 
                 .service-sep,
                 .service-desc,
@@ -73,11 +73,11 @@
                 @apply bg-Primary/1 h-[calc(258/1920*100rem)]
 
                 .service-title
-                    @apply text-left h-auto justify-start items-start
+                    @apply h-auto absolute left-4 translate-x-1
 
                 .service-sep
                     @apply opacity-100 visible translate-y-0
-                    @apply w-24 h-0 border-b-[2px] border-Primary/2 my-4
+                    @apply w-24 h-0 border-b-[2px] border-Primary/2 mb-4 mt-10
 
                 .service-desc
                     @apply opacity-100 visible translate-y-0
