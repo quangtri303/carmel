@@ -7,7 +7,8 @@ import {
   Navigation,
   Pagination,
 } from "swiper/modules";
-
+import { tabNews } from "./news";
+import { tabFacility } from "./facility";
 /**
  * @param swiperInit
  */
@@ -95,7 +96,7 @@ export function swiperInit() {
   });
   new Swiper(".swiper-doctors .swiper", {
     modules: [Navigation, Pagination, Autoplay],
-    slidesPerView: 1,
+    slidesPerView: 1.5,
     spaceBetween: 10,
     navigation: {
       nextEl: ".swiper-doctors .btn-next",
@@ -105,11 +106,7 @@ export function swiperInit() {
       delay: 5000,
     },
     breakpoints: {
-      640: {
-        spaceBetween: 10,
-        slidesPerView: 2,
-      },
-      1024: {
+      768: {
         spaceBetween: 10,
         slidesPerView: 3,
       },
@@ -151,28 +148,33 @@ export function swiperInit() {
       },
     },
     on: {
-      init: function () {
-        const mainImg = document.getElementById("main-img");
-        const thumbs = document.querySelectorAll(
-          ".swiper-facility .facility-card img",
-        );
+      click: function (swiper) {
+        if (!swiper.clickedSlide) return;
 
-        thumbs.forEach((img) => {
-          img.addEventListener("click", function () {
-            const newSrc = this.getAttribute("src");
+        const thumbImg = swiper.clickedSlide.querySelector("img");
+        if (!thumbImg) return;
+
+        const newSrc = thumbImg.getAttribute("src");
+
+        const mainDesktop = document.getElementById("main-img");
+        const mainMobile = document.getElementById("main-img2");
+
+        [mainDesktop, mainMobile].forEach((mainImg) => {
+          if (mainImg) {
             mainImg.style.opacity = "0";
+
             setTimeout(() => {
               mainImg.src = newSrc;
               mainImg.style.opacity = "1";
-            }, 300); 
-          });
+            }, 300);
+          }
         });
       },
     },
   });
   new Swiper(".swiper-specialties .swiper", {
     modules: [Navigation, Pagination, Grid],
-    slidesPerView: 1,
+    slidesPerView: 2,
     grid: {
       rows: 2,
       fill: "row",
@@ -183,15 +185,11 @@ export function swiperInit() {
       prevEl: ".swiper-specialties .btn-prev",
     },
     breakpoints: {
-      640: {
-        slidesPerView: 2,
-        grid: { rows: 2 },
-      },
-      1024: {
+      768: {
         slidesPerView: 3,
         grid: { rows: 2 },
       },
-      1280: {
+      1200: {
         slidesPerView: 4,
         grid: { rows: 2 },
       },
@@ -224,21 +222,32 @@ export function swiperInit() {
           .querySelectorAll(".service-bg img")
           .forEach((img) => img.classList.remove("active"));
 
-        document
-          .getElementById(`service-bg-${bgIndex}`)
-          ?.classList.add("active");
+        const bg = document.getElementById(`service-bg-${bgIndex}`);
+        if (bg) {
+          bg.classList.add("active");
+        }
       },
     },
   });
 }
-document.querySelectorAll(".swiper-service .swiper-slide").forEach((slide) => {
-  slide.addEventListener("mouseenter", () => {
-    const bgIndex = slide.dataset.index;
+if (window.innerWidth >= 1200) {
+  document
+    .querySelectorAll(".swiper-service .swiper-slide .service-card")
+    .forEach((slide) => {
+      slide.addEventListener("mouseenter", () => {
+        const bgIndex = slide.parentElement.dataset.index;
 
-    document
-      .querySelectorAll(".service-bg img")
-      .forEach((img) => img.classList.remove("active"));
+        document
+          .querySelectorAll(".service-bg img")
+          .forEach((img) => img.classList.remove("active"));
 
-    document.getElementById(`service-bg-${bgIndex}`)?.classList.add("active");
-  });
-});
+        const bg = document.getElementById(`service-bg-${bgIndex}`);
+        if (bg) {
+          bg.classList.add("active");
+        }
+      });
+    });
+}
+
+tabNews();
+tabFacility();

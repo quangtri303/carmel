@@ -26,9 +26,8 @@ export const header = {
       e.preventDefault();
       const submenu = $(this).siblings(".header-mobile-submenu");
       const icon = $(this).find(".fa-chevron-right");
-
       submenu.slideToggle(300);
-      icon.toggleClass("rotate-90");
+      icon.toggleClass("active");
     });
   },
   initVariable: function () {

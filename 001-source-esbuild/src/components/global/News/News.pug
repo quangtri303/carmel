@@ -1,5 +1,5 @@
 -
-    var newsList = [
+    var medical = [
         {
         img: "/img/news-1.png",
         date: "12/03/2026",
@@ -25,37 +25,79 @@
         desc: "Bệnh viện Quốc tế Carmel đang tìm kiếm những ứng viên tận tâm, giàu chuyên môn và tinh thần phục vụ."
         }
     ]
-
-section(class="w-full")
+    var activity = [
+        {
+        img: "/img/news-2.png",
+        date: "15/03/2026",
+        title: "Bệnh viện Quốc tế Carmel cung cấp dịch vụ chăm sóc sức khỏe chất lượng cao, trang thiết bị hiện đại",
+        desc: "Môi trường làm việc chuyên nghiệp, trang thiết bị hiện đại, cơ hội đào tạo – phát triển rõ ràng."
+        },
+        {
+        img: "/img/news-1.png",
+        date: "12/03/2026",
+        title: "Nâng tầm chăm sóc sức khỏe chuẩn quốc tế với dịch vụ hiện đại",
+        desc: "Chúng tôi mang đến môi trường làm việc chuyên nghiệp, trang thiết bị hiện đại, cơ hội đào tạo - phát triển rõ ràng cùng chế độ đãi ngộ hấp dẫn."
+        },
+        {
+        img: "/img/news-1.png",
+        date: "18/03/2026",
+        title: "Nơi tài năng của bạn được phát huy và trân trọng",
+        desc: "Bệnh viện Quốc tế Carmel đang tìm kiếm những ứng viên tận tâm, giàu chuyên môn và tinh thần phục vụ."
+        },
+        {
+        img: "/img/news-2.png",
+        date: "19/03/2026",
+        title: "Nơi tài năng của bạn được phát huy và trân trọng",
+        desc: "Bệnh viện Quốc tế Carmel đang tìm kiếm những ứng viên tận tâm, giàu chuyên môn và tinh thần phục vụ."
+        }
+    ]
+section(class="section-news section overflow-y-hidden")
     .container
-        div(class="py-20 flex flex-col gap-10")
+        div(class="flex flex-col gap-10" data-aos="fade-up")
             div(class="heading-1 font-semibold text-Primary/1 text-center") Tin tức - Hoạt động
-            ul(class="news-category")
-                li(class="active")
-                    div Tin y tế
-                li
-                    div Tin tức hoạt động
-                li
-                    div Y khoa thưởng thức
-                li
-                    div Hỏi - Đáp
-            div(class="swiper-news relative w-full")
+            .overflow-x-auto
+                ul(class="news-category")
+                    li(class="active" data-category="medical")
+                        div Tin y tế
+                    li(data-category="activity")
+                        div Tin tức hoạt động
+                    li(data-category="medical")
+                        div Y khoa thưởng thức
+                    li(data-category="activity")
+                        div Hỏi - Đáp
+            div(class="swiper-news relative w-full" data-aos="fade-left")
                 div(class="container mx-auto")
                         div(class="relative")
-                            .swiper
-                                .swiper-wrapper
-                                    each item in newsList
-                                        .swiper-slide
-                                            .news-card
-                                                div(class="news-img img-ratio ratio:pt-[220_440]")
-                                                    img(src=item.img)
-                                                div(class="news-date") #{item.date}
-                                                .news-info
-                                                    .news-title #{item.title}
-                                                    .news-desc #{item.desc}
-                                                    a(href="#" class="flex gap-2 mt-auto items-center group")
-                                                        div(class="border-b-[1px] border-transparent group-hover:border-Primary/1 text-Primary/1 heading-6 transition-colors duration-300") Xem chi tiết
-                                                        i.fa-thin.fa-chevron-right(class="bg-Primary/1 rounded-full text-Utility/white flex justify-center items-center h-10 w-10")
+                            .news-content.active(data-news="medical")
+                                .swiper
+                                    .swiper-wrapper
+                                        each item in medical
+                                            .swiper-slide
+                                                .news-card
+                                                    div(class="news-img img-ratio ratio:pt-[220_440]")
+                                                        img(src=item.img)
+                                                    div(class="news-date") #{item.date}
+                                                    .news-info
+                                                        .news-title #{item.title}
+                                                        .news-desc #{item.desc}
+                                                        a(href="#" class="flex gap-2 mt-auto items-center group")
+                                                            div(class="border-b-[1px] border-transparent group-hover:border-Primary/1 text-Primary/1 heading-6 transition-colors duration-300") Xem chi tiết
+                                                            i.fa-thin.fa-chevron-right(class="bg-Primary/1 rounded-full text-Utility/white flex justify-center items-center h-10 w-10")
+                            .news-content(data-news="activity")
+                                .swiper
+                                    .swiper-wrapper
+                                        each item in activity
+                                            .swiper-slide
+                                                .news-card
+                                                    div(class="news-img img-ratio ratio:pt-[220_440]")
+                                                        img(src=item.img)
+                                                    div(class="news-date") #{item.date}
+                                                    .news-info
+                                                        .news-title #{item.title}
+                                                        .news-desc #{item.desc}
+                                                        a(href="#" class="flex gap-2 mt-auto items-center group")
+                                                            div(class="border-b-[1px] border-transparent group-hover:border-Primary/1 text-Primary/1 heading-6 transition-colors duration-300") Xem chi tiết
+                                                            i.fa-thin.fa-chevron-right(class="bg-Primary/1 rounded-full text-Utility/white flex justify-center items-center h-10 w-10")
                             .btn-swiper
                                 .btn-prev
                                     i.fa-thin.fa-chevron-left

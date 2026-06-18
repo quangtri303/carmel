@@ -1,7 +1,8 @@
+
 .news-category
-    @apply flex flex-wrap gap-4 w-full justify-center
+    @apply flex w-max min-w-full justify-center gap-4 body-1
     li
-        @apply bg-Utility/gray-50 text-Utility/gray-950-maintext rounded-4 px-3 py-1 cursor-pointer transition-colors duration-300
+        @apply bg-Utility/gray-50 text-Utility/gray-950-maintext rounded-4 px-3 py-1 cursor-pointer transition-colors duration-300 shrink-0
         &:hover
             @apply bg-Primary/1 text-Utility/white
         &.active
@@ -28,8 +29,12 @@
             .news-title
                 @apply heading-4 font-bold text-Utility/gray-950-maintext transition-colors duration-300
             .news-desc
-                @apply rem:text-[16px] text-Utility/gray-600-secondarytext
+                @apply body-1 text-Utility/gray-600-secondarytext
+.news-content
+    display: none
 
+    &.active
+        display: block
 .btn-swiper
     @apply flex relative mt-5 w-full justify-center gap-4 z-10
     .btn-prev, .btn-next

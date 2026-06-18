@@ -1,32 +1,68 @@
-section(class="w-full pt-10 xl:pt-20 ")
+-
+    var facilities = [
+        {
+            img:"img/facility.png"
+        },
+        {
+            img:"img/facility2.png"
+        },
+        {
+            img:"img/facility3.png"
+        },
+        {
+            img:"img/facility2.png"
+        },
+    ]
+    var equipments = [
+        {
+            img:"img/facility2.png"
+        },
+        {
+            img:"img/facility3.png"
+        },
+        {
+            img:"img/facility.png"
+        },
+        {
+            img:"img/facility2.png"
+        },
+        {
+            img:"img/facility3.png"
+        },
+    ]
+
+section(class="section-facility section")
     .container
         div(class="flex flex-col xl:flex-row gap-7 w-full")
-            div(class="xl:basis-1/2")
+            div(class="xl:basis-1/2 hidden xl:block" data-aos="fade-right")
                 img#main-img(src="img/facility.png" class="w-full h-auto transition-all duration-300")
             div(class="w-full xl:basis-1/2 flex flex-col min-w-0 relative")
-                div(class="flex flex-col gap-6 px-2 xl:px-13 py-10 items-center xl:items-start text-center xl:text-left")
+                div(class="flex flex-col gap-6 xl:px-13 py-10 items-center xl:items-start text-center xl:text-left" data-aos="fade-left")
                     div(class="heading-1 font-semibold text-Primary/1") Cơ sở vật chất<br class="hidden xl:block"> &amp; Trang thiết bị hiện đại 
-                    div(class="flex gap-4")
-                        button(class="text-Utility/white bg-Primary/1 rounded-4 px-3 py-1 rem:text-[16px]") Cơ sở vật chất
-                        button(class="text-Utility/gray-950-maintext bg-gray-50 hover:bg-Primary/1 hover:text-Utility/white rounded-4 px-3 py-1 rem:text-[16px]") Trang thiết bị
+                    div(class="flex gap-4 facility-tabs")
+                        div(class="active" data-category="facilities") Cơ sở vật chất
+                        div(class="" data-category="equipments") Trang thiết bị
                     div(class="body-2") Bệnh viện Quốc tế Carmel được phát triển theo định hướng “bệnh viện thông minh”, nơi công nghệ y khoa hiện đại tích hợp cùng thiết kế không gian tối ưu nhằm nâng cao hiệu quả điều trị và trải nghiệm của người bệnh. Cơ sở vật chất được đầu tư khang trang, rộng rãi, chú trọng không gian xanh thoáng mát mang đến cảm giác thoải mái cho người bệnh và gia đình
-                div(class="swiper-facility relative w-full px-10")
+                div(data-aos="fade-right" class="block xl:hidden mb-5 img-ratio ratio:pt-[581_720]")
+                    img#main-img2(src="img/facility.png" class="w-full h-auto transition-all duration-300")
+                div(class="swiper-facility relative w-full xl:px-13" data-aos="fade-up")
                     div(class="mx-auto")
                         div(class="relative")
-                            .swiper
-                                .swiper-wrapper
-                                    div(class="swiper-slide")
-                                        div(class="facility-card")
-                                            img(src="img/facility.png")
-                                    div(class="swiper-slide")
-                                        div(class="facility-card")
-                                            img(src="img/facility2.png")
-                                    div(class="swiper-slide")
-                                        div(class="facility-card")
-                                            img(src="img/facility3.png")
-                                    div(class="swiper-slide")
-                                        div(class="facility-card")
-                                            img(src="img/facility.png")
+                            .facility-content.active(data-img="facilities")
+                                .swiper
+                                    .swiper-wrapper
+                                        each item in facilities
+                                            div(class="swiper-slide")
+                                                div(class="facility-card")
+                                                    img(src=item.img)
+                            .facility-content(data-img="equipments")
+                                .swiper
+                                    .swiper-wrapper
+                                        each item in equipments
+                                            div(class="swiper-slide")
+                                                div(class="facility-card")
+                                                    img(src=item.img)
+                                    
                             .btn-swiper
                                 .btn-prev
                                     i.fa-thin.fa-chevron-left

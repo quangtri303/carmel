@@ -1,8 +1,8 @@
 header(class="bg-Utility/white min-h-27.5 w-full  z-100")
-    div(class="px-5 md:px-10 xl:px-40 flex flex-row pt-2.5 justify-between items-center")
+    div(class="px-5 md:px-10 xl:px-40 flex flex-row justify-between items-center")
         div(class="h-full flex items-center")
             img(src='/img/logo.png' class="h-12 xl:h-18" alt="Logo")
-        div(class="flex flex-col")
+        div(class="flex flex-col xl:pt-2.5")
             div(class="hidden xl:flex gap-3 justify-end")
                 include ../ContactBtn/ContactBtn.pug
             div(class="flex gap-6 h-17 items-center justify-end")
@@ -44,8 +44,8 @@ header(class="bg-Utility/white min-h-27.5 w-full  z-100")
                     li
                         a(href="#") HỖ TRỢ KHÁCH HÀNG
                 div(class="flex bg-Primary/1/10 rounded-20 gap-0.5 p-0.5 h-8 items-center")
-                    button(class="bg-Primary/1 rounded-20 px-2 py-1 rem:text-[14px] font-bold") VN
-                    button(class="rounded-20 text-Primary/1 px-2 py-1 rem:text-[14px]") EN
+                    div(class="bg-Primary/1 rounded-20 px-2 py-1 body-3 font-bold") VN
+                    div(class="rounded-20 text-Primary/1 px-2 py-1 body-3") EN
                 div(class="header-search")
                     input(class="" type="text" placeholder="Tìm kiếm")
                     .fa-light.fa-magnifying-glass
@@ -56,8 +56,12 @@ header(class="bg-Utility/white min-h-27.5 w-full  z-100")
             //- Mobile Menu
             ul(class="header-mobile-nav")
                 li
+                    div(class="flex items-center py-2 px-4 gap-4 border border-Primary/2 rounded-2 m-4")
+                        i.fa-solid.fa-search
+                        input(type="text" placeholder="Tìm kiếm" class="bg-transparent w-full outline-none placeholder:text-Utility/white")
+                li
                     a(href="#" class="header-mobile-toggle") VỀ CHÚNG TÔI
-                        .fa-solid.fa-chevron-right(class="ml-auto h-3 aspect-square transition-transform duration-300 ease-out")
+                        i.fa-solid.fa-chevron-right(class="block ml-auto h-3 aspect-square transition-transform duration-300 ease-out")
                     ul(class="header-mobile-submenu")
                         li
                             a(href="#") Tầm nhìn - Sứ mệnh
@@ -79,7 +83,7 @@ header(class="bg-Utility/white min-h-27.5 w-full  z-100")
                     a(href="#") DỊCH VỤ
                 li
                     a(class="header-mobile-toggle ") TIN TỨC
-                        .fa-solid.fa-chevron-right(class="ml-auto h-3 aspect-square transition-transform duration-300 ease-out")
+                        i.fa-solid.fa-chevron-right(class="ml-auto h-3 aspect-square transition-transform duration-300 ease-out")
                     ul(class="header-mobile-submenu")
                         li
                             a(href="#") Tin y tế

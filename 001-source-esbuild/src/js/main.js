@@ -10,11 +10,16 @@ $(document).ready(function () {
 	buttonToTop();
 	header.init();
 	swiperInit();
+    setTimeout(() => {AOS.refresh()}, 3000)
 });
 
 /*==================== Aos Init ====================*/
 AOS.init({
 	offset: 100,
+    duration: 1000,
+    once:true,
+    debounceDelay: 50,
+    throttleDelay: 99,
 });
 /*==================== Lazyload JS ====================*/
 const observer = lozad(); // lazy loads elements with default selector as '.lozad'

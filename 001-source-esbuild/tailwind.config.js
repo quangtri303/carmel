@@ -564,16 +564,18 @@ module.exports = {
           "font-size": "calc(18/1920*100rem)",
         },
         ".heading-1": {
-          fontSize: "40px", // 4xl
+          fontSize: "40px",
+          lineHeight: "125%",
           [`@media (min-width: ${theme("screens.lg")})`]: {
-            fontSize: "calc(42/1920*100rem)", // 6xl
+            fontSize: "calc(42/1920*100rem)",
           },
           [`@media (min-width: ${theme("screens.xl")})`]: {
-            fontSize: "calc(48/1920*100rem)", // 72
+            fontSize: "calc(48/1920*100rem)",
           },
         },
         ".heading-2": {
-          fontSize: "32px", // 4xl
+          fontSize: "32px",
+          lineHeight: "130%",
           [`@media (min-width: ${theme("screens.lg")})`]: {
             fontSize: "calc(32/1920*100rem)", // 6xl
           },
@@ -582,7 +584,8 @@ module.exports = {
           },
         },
         ".heading-3": {
-          fontSize: "20px", // 4xl
+          fontSize: "20px",
+          lineHeight: "135%",
           [`@media (min-width: ${theme("screens.lg")})`]: {
             fontSize: "calc(24/1920*100rem)", // 6xl
           },
@@ -592,64 +595,79 @@ module.exports = {
         },
         ".heading-4": {
           fontSize: "18px",
+          lineHeight: "140%",
           [`@media (min-width: ${theme("screens.lg")})`]: {
             fontSize: "calc(20/1920*100rem)", // 6xl
           },
         },
         ".heading-5": {
           fontSize: "16px",
+          lineHeight: "140%",
           [`@media (min-width: ${theme("screens.lg")})`]: {
             fontSize: "calc(18/1920*100rem)",
           },
         },
         ".heading-6": {
           fontSize: "14px",
+          lineHeight: "140%",
           [`@media (min-width: ${theme("screens.lg")})`]: {
             fontSize: "calc(16/1920*100rem)",
           },
         },
         ".heading-7": {
           fontSize: "12px",
+          lineHeight: "140%",
           [`@media (min-width: ${theme("screens.lg")})`]: {
             fontSize: "calc(14/1920*100rem)",
           },
         },
-        ".body-1": {
-          fontSize: "18px",
+        ".heading-banner": {
+          fontSize: "60px",
+          lineHeight: "120%",
           [`@media (min-width: ${theme("screens.lg")})`]: {
-            fontSize: "clamp(18px,calc(20/1920*100rem),calc(20/1920*100rem))", // 6xl
+            fontSize: "calc(72/1920*100rem)",
+          },
+        },
+        ".body-1": {
+          fontSize: "14px",
+          lineHeight: "140%",
+          [`@media (min-width: ${theme("screens.lg")})`]: {
+            fontSize: "clamp(14px,calc(16/1920*100rem),calc(16/1920*100rem))",
           },
         },
         ".body-2": {
           fontSize: "16px",
+          lineHeight: "140%",
           [`@media (min-width: ${theme("screens.lg")})`]: {
-            fontSize: "clamp(16px,calc(18/1920*100rem),calc(18/1920*100rem))", // 6xl
+            fontSize: "clamp(16px,calc(18/1920*100rem),calc(18/1920*100rem))",
           },
         },
         ".body-3": {
-          fontSize: "14px",
+          fontSize: "12px",
+          lineHeight: "140%",
           [`@media (min-width: ${theme("screens.lg")})`]: {
-            fontSize: "clamp(14px,calc(14/1920*100rem),calc(14/1920*100rem))", // 6xl
+            fontSize: "clamp(12px,calc(14/1920*100rem),calc(14/1920*100rem))",
           },
         },
         ".body-4": {
           fontSize: "14px",
+          lineHeight: "140%",
           [`@media (min-width: ${theme("screens.lg")})`]: {
-            fontSize: "clamp(12px,calc(14/1920*100rem),calc(14/1920*100rem))", // 6xl
+            fontSize: "clamp(12px,calc(14/1920*100rem),calc(14/1920*100rem))",
           },
         },
         ".body-5": {
-          fontSize: "12px",
+          fontSize: "18px",
+          lineHeight: "140%",
           [`@media (min-width: ${theme("screens.lg")})`]: {
-            fontSize:
-              "clamp(12px,calc(12px/1920*100rem),calc(12px/1920*100rem))", // 6xl
+            fontSize: "clamp(18px,calc(20/1920*100rem),calc(20/1920*100rem))",
           },
         },
         ".regular": {
           fontSize: "12px",
           [`@media (min-width: ${theme("screens.lg")})`]: {
             fontSize:
-              "clamp(12px,calc(12px/1920*100rem),calc(12px/1920*100rem))", // 6xl
+              "clamp(12px,calc(12/1920*100rem),calc(12/1920*100rem))",
           },
         },
         ".absolute-center-y": {

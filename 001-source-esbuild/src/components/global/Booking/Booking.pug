@@ -1,7 +1,7 @@
-section(class="w-full py-20 bg-Utility/gray-50")
+section(class="section-booking bg-Utility/gray-50 section")
     .container
         div(class="flex flex-col gap-10 items-center")
-            div(class="heading-1 font-semibold text-Primary/1") Quy trình khám bệnh
+            div(class="heading-1 font-semibold text-Primary/1 text-center") Quy trình khám bệnh
             div(class="flex flex-col xl:flex-row gap-8 w-full")
                 ul(class="booking-step")
                     li
@@ -25,39 +25,47 @@ section(class="w-full py-20 bg-Utility/gray-50")
                 div(class="flex flex-col lg:flex-row w-full rounded-10 overflow-hidden bg-white")
                     div(class="h-full w-full")
                         img(src="/img/booking.png")
-                    div(class="flex flex-col w-full py-10 px-8 gap-6")
-                        div(class="rem:text-[24px] text-Primary/1 font-semibold") Đặt lịch hẹn
+                    div(class="flex flex-col w-full")
                         form(class="booking-form")
-                            div(class="form-group")
-                                label(for="fullname")
-                                input(type="text" id="fullname" placeholder="Họ và tên *" required)
-                                
-                            div(class="gender-container flex justify-between")
-                                span(class="gender-label") Giới tính *
-                                div(class="gender-group custom-radio")
-                                    input(type="radio" name="gender" value="nam")
-                                    span(class="radio-box")
-                                    span Nam
-                                div(class="gender-group custom-radio")
-                                    input(type="radio" name="gender" value="nu" checked)
-                                    span(class="radio-box")
-                                    span Nữ
+                            div(class="rem:text-[24px] text-Primary/1 font-semibold") Đặt lịch hẹn
+                            
+                            div(class="block-input")
+                                div(class="relative w-full")
+                                    input(type="text" class="peer w-full border-b border-Primary/1/40 pb-2 outline-none focus:border-Primary/1")
+                                    label(class="absolute left-0 top-2 pointer-events-none transition-all duration-300 ease-out peer-focus:-translate-y-5 peer-focus:opacity-0") Họ và tên <span class="text-Utility/Error-1">*</span>
 
-                            div(class="form-group")
-                                label(for="birthday")
-                                input(type="date" id="birthday" placeholder="Ngày, tháng, năm sinh *" required)
+                            div(class="block-input")
+                                div(class="w-full flex items-center gap-6")
+                                    label(class="") Giới tính <span class="text-Utility/Error-1">*</span>
+                                    div(class="flex gap-8")
+                                        label(class="flex items-center gap-2 cursor-pointer")
+                                            input(type="checkbox" value="1" class="peer hidden")
+                                            span(class="custom-checkbox")
+                                                i(class="fa-solid fa-check")
+                                            span Nam
 
-                            div(class="form-group")
-                                label(for="phone")
-                                input(type="tel" id="phone" placeholder="Số điện thoại *" required)
-
-                            div(class="form-group")
-                                label(for="email")
-                                input(type="email" id="email" placeholder="Email")
+                                        label(class="flex items-center gap-2 cursor-pointer")
+                                            input(type="checkbox" value="0" class="peer hidden")
+                                            span(class="custom-checkbox")
+                                                i(class="fa-solid fa-check")
+                                            span Nữ
+                            div(class="block-input")
+                                div(class="relative w-full")
+                                    input(type="text" class="peer w-full border-b border-Primary/1/40 pb-2 outline-none focus:border-Primary/1")
+                                    label(class="absolute left-0 top-2 pointer-events-none transition-all duration-300 ease-out peer-focus:-translate-y-5 peer-focus:opacity-0") Ngày, tháng, năm sinh <span class="text-Utility/Error-1">*</span>
+                                    div(class="absolute right-0 top-2 fa-regular fa-calendar")
+                            div(class="block-input")
+                                div(class="relative w-full")
+                                    input(type="text" class="peer w-full border-b border-Primary/1/40 pb-2 outline-none focus:border-Primary/1")
+                                    label(class="absolute left-0 top-2 pointer-events-none transition-all duration-300 ease-out peer-focus:-translate-y-5 peer-focus:opacity-0") Số điện thoại <span class="text-Utility/Error-1">*</span>
+                            div(class="block-input")
+                                div(class="relative w-full")
+                                    input(type="text" class="peer w-full border-b border-Primary/1/40 pb-2 outline-none focus:border-Primary/1")
+                                    label(class="absolute left-0 top-2 pointer-events-none transition-all duration-300 ease-out peer-focus:-translate-y-5 peer-focus:opacity-0") Email <span class="text-Utility/Error-1">*</span>
 
                             div(class="form-footer")
                                 div(class="disclaimer") *Chúng tôi cam kết bảo mật thông tin của bạn.
                                     
-                            button(type="submit" class="submit-btn")
+                            button(type="submit" class="self-center flex items-center justify-center gap-4 bg-Primary/1 hover:bg-Primary/2 text-white px-6 py-3 rounded-full transition-all heading-6")
                                 span Đặt hẹn ngay
-                                i.fa-solid.fa-chevron-right
+                                i.fa-solid.fa-chevron-right.heading-6

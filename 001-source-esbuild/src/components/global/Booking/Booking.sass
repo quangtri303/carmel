@@ -1,3 +1,5 @@
+
+
 .booking-step
     @apply flex flex-col justify-around gap-4
     li
@@ -8,43 +10,23 @@
             @apply heading-6 flex items-center
 
 .booking-form
-  @apply bg-white w-full flex flex-col justify-between gap-4 
+  @apply bg-white w-full flex flex-col justify-between gap-6 p-4 xl:py-10 xl:px-8
 
-  .form-group
-    @apply flex flex-col gap-1
-    
-    label
-      @apply text-Utility/gray-950-maintext rem:text-[16px]
-    
-    input[type="text"], input[type="tel"], input[type="email"], input[type="date"]
-      @apply w-full border-b-[1px] border-Primary/1/40 py-2 outline-none transition-all
-      @apply text-Utility/gray-950-maintext
-      &:focus
-        @apply border-Primary/1
+  
+.custom-checkbox
+    @apply w-5 h-5 border border-Utility/gray-950-maintext flex items-center justify-center transition-all duration-200
 
-  .gender-group
-    @apply flex gap-1
-
-  .custom-radio
-    @apply flex items-center gap-3 cursor-pointer rem:text-[16px] text-Utility/gray-950-maintext
-    
-    input
-      @apply hidden
-
-    .radio-box
-      @apply w-6 h-6 border-2 border-Utility/gray-400 rounded-sm flex items-center justify-center transition-all
-
-
-  .form-footer
-    @apply flex justify-between items-end mt-4
-    
-    .disclaimer
-      @apply text-sm text-Utility/gray-950-maintext italic max-w-[200px]
-
-
-  .submit-btn
-    @apply self-center flex items-center gap-4 bg-Primary/1 text-white pl-6 pr-3 py-3 rounded-full transition-all
-    @apply heading-6 hover:bg-Primary/2
-    
     i
-      @apply text-[16px]
+        @apply text-[10px] text-Primary/2 opacity-0 transition-opacity duration-200
+
+.peer:checked + .custom-checkbox
+    @apply border-Primary/2
+    i
+        @apply opacity-100
+
+.form-footer
+    @apply flex justify-between items-center
+    
+.disclaimer
+    @apply body-3 text-Utility/gray-950-maintext
+

@@ -1,6 +1,7 @@
+
 .swiper-facility
     .facility-card
-        @apply w-full img-ratio ratio:pt-[151_192] rounded-3
+        @apply w-full img-ratio ratio:pt-[151_192] rounded-3 cursor-pointer
 
 .btn-swiper
     @apply flex relative mt-5 w-full justify-center gap-4 z-10
@@ -13,3 +14,15 @@
             @apply absolute -left-15 -translate-y-1/2
         .btn-next
             @apply absolute -right-15 -translate-y-1/2
+
+.facility-tabs
+    div
+        @apply text-Utility/gray-950-maintext bg-gray-50 hover:bg-Primary/1 hover:text-Utility/white rounded-4 px-3 py-1 body-1 transition-colors duration-300 cursor-pointer
+        &.active
+            @apply text-Utility/white bg-Primary/1
+
+.facility-content
+    display: none
+
+    &.active
+        display: block

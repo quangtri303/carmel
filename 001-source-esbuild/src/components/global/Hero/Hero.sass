@@ -26,19 +26,19 @@
             @apply z-10 w-10 h-10 bg-Utility/gray-50 rounded-full flex items-center justify-center cursor-pointer hover:bg-Primary/1 hover:text-white transition-all
             
 .banner-nav
-    @apply absolute bottom-20 xl:bottom-7 xl:left-[calc(258/1920*100rem)] right-5 left-5
-    @apply xl:w-[calc(842/1920*100rem)] h-[calc(116/1920*100rem)]
+    @apply absolute bottom-20 xl:bottom-7 xl:left-[calc(258/1920*100rem)] right-6 left-6
+    @apply xl:w-[calc(842/1920*100rem)] xl:h-[calc(116/1920*100rem)]
     @apply flex rounded-6 border-Primary/2 border-[1px] overflow-hidden z-50
 
     li
         @apply flex w-full h-full
         a
-            @apply rounded-none w-full
-            @apply flex flex-col xl:flex-row gap-2 xl:gap-6 justify-center items-center
+            @apply rounded-none w-full py-2
+            @apply flex flex-col xl:flex-row gap-1 xl:gap-6 justify-center items-center
             @apply bg-Utility/white text-Primary/1 transition-all duration-300
-            @apply heading-5 xl:heading-3 font-bold cursor-pointer
+            @apply heading-6 xl:heading-3 font-bold cursor-pointer
             i
-                @apply heading-1
+                @apply heading-2 xl:heading-1
         &:hover
             a
                 @apply bg-Primary/2
