@@ -1,7 +1,5 @@
 
-.swiper-facility
-    .facility-card
-        @apply w-full img-ratio ratio:pt-[151_192] rounded-3 cursor-pointer
+
 
 .btn-swiper
     @apply flex relative mt-5 w-full justify-center gap-4 z-10
@@ -21,8 +19,10 @@
         &.active
             @apply text-Utility/white bg-Primary/1
 
+
+.main-content,
 .facility-content
-    display: none
+    @apply hidden
 
     &.active
-        display: block
+        @apply block

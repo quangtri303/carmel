@@ -1,10 +1,10 @@
 
 
 .intro-btns
-	@apply grid grid-cols-2 gap-2
+	@apply flex flex-wrap gap-4
 	
 	li
-		@apply bg-white flex flex-col pt-7 pb-12 gap-1 w-full px-5 shrink-0 rounded-6 transition-all duration-500 m-1 
+		@apply flex-1 min-w-0 basis-[calc(50%-0.5rem)] bg-white flex flex-col pt-7 pb-12 gap-1 w-full px-5 shrink-0 rounded-6 transition-all duration-500 
 		box-shadow: 0 0 0 0px transparent 
 		
 		&:hover
@@ -24,6 +24,8 @@
 			@apply text-Utility/gray-950-maintext rem:text-[16px] font-semibold text-center transition-colors duration-300
 
 	@media (min-width: 768px)
-		@apply grid-cols-3
+		li
+			@apply basis-[calc(33.333%-0.75rem)]
 	@media (min-width: 1200px)
-		@apply grid-cols-5
+		li
+			@apply basis-[calc(20%-0.75rem)]

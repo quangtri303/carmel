@@ -8,7 +8,7 @@ import {
   Pagination,
 } from "swiper/modules";
 import { tabNews } from "./news";
-import { tabFacility } from "./facility";
+import { swiperFacility } from "./facility";
 /**
  * @param swiperInit
  */
@@ -134,44 +134,7 @@ export function swiperInit() {
       },
     },
   });
-  new Swiper(".swiper-facility .swiper", {
-    modules: [Navigation, Pagination],
-    slidesPerView: 2,
-    spaceBetween: 12,
-    navigation: {
-      nextEl: ".swiper-facility .btn-next",
-      prevEl: ".swiper-facility .btn-prev",
-    },
-    breakpoints: {
-      768: {
-        slidesPerView: 3,
-      },
-    },
-    on: {
-      click: function (swiper) {
-        if (!swiper.clickedSlide) return;
-
-        const thumbImg = swiper.clickedSlide.querySelector("img");
-        if (!thumbImg) return;
-
-        const newSrc = thumbImg.getAttribute("src");
-
-        const mainDesktop = document.getElementById("main-img");
-        const mainMobile = document.getElementById("main-img2");
-
-        [mainDesktop, mainMobile].forEach((mainImg) => {
-          if (mainImg) {
-            mainImg.style.opacity = "0";
-
-            setTimeout(() => {
-              mainImg.src = newSrc;
-              mainImg.style.opacity = "1";
-            }, 300);
-          }
-        });
-      },
-    },
-  });
+  
   new Swiper(".swiper-specialties .swiper", {
     modules: [Navigation, Pagination, Grid],
     slidesPerView: 2,
@@ -232,10 +195,10 @@ export function swiperInit() {
 }
 if (window.innerWidth >= 1200) {
   document
-    .querySelectorAll(".swiper-service .swiper-slide .service-card")
+    .querySelectorAll(".swiper-service .swiper-slide")
     .forEach((slide) => {
       slide.addEventListener("mouseenter", () => {
-        const bgIndex = slide.parentElement.dataset.index;
+        const bgIndex = slide.dataset.index;
 
         document
           .querySelectorAll(".service-bg img")
@@ -250,4 +213,4 @@ if (window.innerWidth >= 1200) {
 }
 
 tabNews();
-tabFacility();
+swiperFacility();

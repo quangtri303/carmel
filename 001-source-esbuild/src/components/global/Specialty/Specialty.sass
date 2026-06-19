@@ -2,21 +2,25 @@
     
 .swiper-specialties
     .specialty-card
-        @apply relative flex flex-col gap-6 py-8 justify-center rounded-6 bg-white w-full items-center transition-all duration-300 z-10 shadow-Shadow-3 border-transparent border-b-8
+        @apply relative flex flex-col gap-6 py-8 justify-center rounded-6 bg-white w-full transition-transform duration-300 items-center z-10 shadow-Shadow-3 overflow-hidden 
+        &::before
+            content: ""
+            @apply absolute w-full h-full opacity-0 transition-transform duration-300 inset-0 bg-Utility/white z-0 rounded-4
+
         &:hover
-            @apply -translate-y-2  border-Primary/1
-            &::after
-                @apply opacity-100
+            @apply -translate-y-2 bg-gradient-to-r from-Primary/2 to-Primary/1
+            &::before
+                @apply opacity-100 -translate-y-2.5
             .specialty-icon
                 @apply bg-Primary/1
                 img
                     filter: brightness(0) invert(1)
         .specialty-icon
-            @apply h-30 w-30 rounded-full bg-Primary/2/10 flex justify-center items-center transition-all duration-300
+            @apply h-30 w-30 rounded-full bg-Primary/2/10 flex justify-center items-center transition-all duration-300 z-20
             img
                 @apply h-25 w-25 transition-all duration-300
         p
-            @apply heading-4 font-bold
+            @apply heading-4 font-bold z-20
 
 .btn-swiper
     @apply flex relative mt-5 w-full justify-center gap-4 z-10

@@ -564,7 +564,7 @@ module.exports = {
           "font-size": "calc(18/1920*100rem)",
         },
         ".heading-1": {
-          fontSize: "40px",
+          fontSize: "36px",
           lineHeight: "125%",
           [`@media (min-width: ${theme("screens.lg")})`]: {
             fontSize: "calc(42/1920*100rem)",
@@ -587,17 +587,17 @@ module.exports = {
           fontSize: "20px",
           lineHeight: "135%",
           [`@media (min-width: ${theme("screens.lg")})`]: {
-            fontSize: "calc(24/1920*100rem)", // 6xl
+            fontSize: "calc(24/1920*100rem)",
           },
           [`@media (min-width: ${theme("screens.xl")})`]: {
-            fontSize: "calc(24/1920*100rem)", // 72
+            fontSize: "calc(24/1920*100rem)",
           },
         },
         ".heading-4": {
           fontSize: "18px",
           lineHeight: "140%",
           [`@media (min-width: ${theme("screens.lg")})`]: {
-            fontSize: "calc(20/1920*100rem)", // 6xl
+            fontSize: "calc(20/1920*100rem)",
           },
         },
         ".heading-5": {
@@ -608,9 +608,9 @@ module.exports = {
           },
         },
         ".heading-6": {
-          fontSize: "14px",
+          fontSize: "16px",
           lineHeight: "140%",
-          [`@media (min-width: ${theme("screens.lg")})`]: {
+          [`@media (min-width: ${theme("screens.xl")})`]: {
             fontSize: "calc(16/1920*100rem)",
           },
         },
