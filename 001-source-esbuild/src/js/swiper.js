@@ -97,7 +97,7 @@ export function swiperInit() {
   new Swiper(".swiper-doctors .swiper", {
     modules: [Navigation, Pagination, Autoplay],
     slidesPerView: 1.5,
-    spaceBetween: 10,
+    spaceBetween: 40,
     navigation: {
       nextEl: ".swiper-doctors .btn-next",
       prevEl: ".swiper-doctors .btn-prev",
@@ -107,11 +107,9 @@ export function swiperInit() {
     },
     breakpoints: {
       768: {
-        spaceBetween: 10,
         slidesPerView: 3,
       },
-      1280: {
-        spaceBetween: 10,
+      1200: {
         slidesPerView: 4,
       },
     },
@@ -142,7 +140,7 @@ export function swiperInit() {
       rows: 2,
       fill: "row",
     },
-    spaceBetween: 24,
+    spaceBetween: 20,
     navigation: {
       nextEl: ".swiper-specialties .btn-next",
       prevEl: ".swiper-specialties .btn-prev",
